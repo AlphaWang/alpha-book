@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>Alpha subscriptions in feedly Cloud</title>
+    </head>
+    <body>
+        <outline text="Architecture" title="Architecture">
+            <outline type="rss" text="InfoQ - Architecture &amp; Design" title="InfoQ - Architecture &amp; Design" xmlUrl="http://www.infoq.com/feed/architecture-design" htmlUrl="http://www.infoq.com"/>
+        </outline>
+        <outline text="Dev -cn" title="Dev -cn">
+            <outline type="rss" text="舒の随想日记" title="舒の随想日记" xmlUrl="http://blog.hesey.net/feed" htmlUrl="http://blog.hesey.net"/>
+            <outline type="rss" text="技术小黑屋" title="技术小黑屋" xmlUrl="http://droidyue.com/atom.xml" htmlUrl="https://droidyue.com/"/>
+            <outline type="rss" text="刘未鹏 | Mind Hacks" title="刘未鹏 | Mind Hacks" xmlUrl="http://mindhacks.cn/feed/" htmlUrl="http://mindhacks.cn"/>
+            <outline type="rss" text="并发编程网 - ifeve.com" title="并发编程网 - ifeve.com" xmlUrl="http://ifeve.com/feed/" htmlUrl="http://ifeve.com"/>
+            <outline type="rss" text="阮一峰的网络日志" title="阮一峰的网络日志" xmlUrl="http://www.ruanyifeng.com/blog/atom.xml" htmlUrl="http://www.ruanyifeng.com/blog/"/>
+            <outline type="rss" text="花钱的年华" title="花钱的年华" xmlUrl="http://calvin1978.blogcn.com/feed" htmlUrl="http://calvin1978.blogcn.com"/>
+            <outline type="rss" text="zejian的博客" title="zejian的博客" xmlUrl="http://blog.csdn.net/javazejian/rss/list" htmlUrl="https://blog.csdn.net/javazejian"/>
+            <outline type="rss" text="InfoQ" title="InfoQ" xmlUrl="http://www.infoq.com/cn/feed" htmlUrl="http://www.infoq.com/cn/"/>
+            <outline type="rss" text="博客 - 伯乐在线" title="博客 - 伯乐在线" xmlUrl="http://blog.jobbole.com/feed/" htmlUrl="http://blog.jobbole.com"/>
+            <outline type="rss" text="酷 壳 – CoolShell" title="酷 壳 – CoolShell" xmlUrl="http://coolshell.cn/feed" htmlUrl="https://coolshell.cn"/>
+            <outline type="rss" text="ImportNew" title="ImportNew" xmlUrl="http://www.importnew.com/feed" htmlUrl="http://www.importnew.com"/>
+            <outline type="rss" text="justjavac" title="justjavac" xmlUrl="http://justjavac.com/atom.xml" htmlUrl="https://justjavac.com"/>
+        </outline>
+        <outline text="Dev -en" title="Dev -en">
+            <outline type="rss" text="Java Code Geeks" title="Java Code Geeks" xmlUrl="http://feeds.feedburner.com/JavaCodeGeeks" htmlUrl="https://www.javacodegeeks.com"/>
+            <outline type="rss" text="InfoQ -en" title="InfoQ -en" xmlUrl="http://www.infoq.com/rss/rss.action?token=oYo1FHsb9txKnyvsEtFbNhVvoBb6Inn5" htmlUrl="http://www.infoq.com"/>
+            <outline type="rss" text="Jenkov.com - News" title="Jenkov.com - News" xmlUrl="http://feeds2.feedburner.com/jenkov-com" htmlUrl="http://jenkov.com/rss.xml"/>
+            <outline type="rss" text="DZone -Web" title="DZone -Web" xmlUrl="http://feeds.dzone.com/zones/css" htmlUrl="https://dzone.com/web-development-programming-tutorials-tools-news"/>
+            <outline type="rss" text="Martin Fowler" title="Martin Fowler" xmlUrl="http://martinfowler.com/feed.atom" htmlUrl="https://martinfowler.com"/>
+            <outline type="rss" text="DZone -Javalobby" title="DZone -Javalobby" xmlUrl="http://feeds.dzone.com/javalobby/frontpage" htmlUrl="https://dzone.com/java-jdk-development-tutorials-tools-news"/>
+        </outline>
+        <outline text="Must Read" title="Must Read">
+            <outline type="rss" text="Martin Fowler" title="Martin Fowler" xmlUrl="http://martinfowler.com/feed.atom" htmlUrl="https://martinfowler.com"/>
+        </outline>
+        <outline type="rss" text="Mac玩儿法" title="Mac玩儿法" xmlUrl="http://www.waerfa.com/feed/" htmlUrl="https://www.waerfa.com"/>
+        <outline type="rss" text="高爽|Coder" title="高爽|Coder" xmlUrl="http://blog.csdn.net/ghsau/rss/list" htmlUrl="https://blog.csdn.net/ghsau"/>
+        <outline type="rss" text="Jack Liu博客-RSS订阅" title="Jack Liu博客-RSS订阅" xmlUrl="http://www.jack-liu.com/rss.php" htmlUrl="http://www.jack-liu.com/"/>
+        <outline type="rss" text="Blog" title="Blog" xmlUrl="http://www.jamespan.me/blog/atom.xml" htmlUrl="http://blog.jamespan.me/"/>
+        <outline type="rss" text="喷嚏图卦" title="喷嚏图卦" xmlUrl="http://www.pentitugua.com/rss.xml" htmlUrl="http://www.pentitugua.com/rss.xml"/>
+        <outline type="rss" text="文木tuchng" title="文木tuchng" xmlUrl="http://wenmu.tuchong.com/feeds/" htmlUrl="https://wenmu.tuchong.com/feeds/"/>
+    </body>
+</opml>
