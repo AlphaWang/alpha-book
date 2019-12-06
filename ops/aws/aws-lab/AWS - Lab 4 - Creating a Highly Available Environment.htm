@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://china-aws.qwiklabs.com/classrooms/30842/labs/166976 -->
+<html lang="zh" class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/caff0d62ed"></script><script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/nr-1153.min.js"></script><script type="text/javascript" id="www-widgetapi-script" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/www-widgetapi.js" async=""></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"caff0d62ed","applicationID":"7198647","transactionName":"IQ1XRUEOVV1dFxlRXAEXSlRATkpZVxI=","queueTime":0,"applicationTime":732,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"caff0d62ed",applicationID:"7198647"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta content="[]" name="active-experiments">
+<meta content="{&quot;userId&quot;:318010}" name="help-api-product-data">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Tt46TpQs5RXhtTf5GuEWN1hS6EBXcvqhvKkhy3BG8hwtPmcehpEOiKpWKWlzAQRoIGdcOtsWGKuwhG2z2QANpQ==">
+<title>Architecting on AWS - Lab 4 - Creating a Highly Available Environment | Qwiklabs</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+<meta content="In this lab, you will start with an application running on a single Amazon EC2 instance and will then convert it to be Highly Available." name="description">
+<meta content="Qwiklabs" name="author">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="Architecting on AWS - Lab 4 - Creating a Highly Available Environment | Qwiklabs" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/favicon-144.png" property="og:image">
+<meta content="Qwiklabs" property="og:site_name">
+<meta content="In this lab, you will start with an application running on a single Amazon EC2 instance and will then convert it to be Highly Available." property="og:description">
+<meta content="/qwiklabs_logo_900x887.png" property="og:logo" size="900x887">
+<meta content="/qwiklabs_logo_994x187.png" property="og:logo" size="994x187">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/favicon-144.png" property="msapplication-TileImage">
+<link href="https://china-aws.qwiklabs.com/favicon-32.png" rel="shortcut icon">
+<link color="#3681E4" href="https://china-aws.qwiklabs.com/favicon-svg.svg" rel="mask-icon">
+<link href="https://china-aws.qwiklabs.com/favicon-180.png" rel="apple-touch-icon-precomposed">
+<link rel="stylesheet" media="screen" href="./AWS - Lab 4 - Creating a Highly Available Environment_files/css">
+
+<link rel="stylesheet" media="screen" href="./AWS - Lab 4 - Creating a Highly Available Environment_files/zh-baa812484310685c34f060fc93a4033f915219f35ede62badd48dfc59334e103.css">
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+<![endif]-->
+<!--[endif]>  <![endif]-->
+<script>
+//<![CDATA[
+window.gon={};gon.current_user={"firstname":"Alpha","lastname":"Wang","fullname":"Alpha Wang","company":"Coupang","email":"awang@coupang.com","origin":"china-aws, direct","subscriptions":0,"id":"5a6928df14236eb34d3e60852bd714db","qlCreatedAt":"2019-12-05 07:02:39 UTC","optIn":true};gon.segment=null;gon.deployment="china-aws";
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.qwiklabs.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.qwiklabs.com/catalog?keywords={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script id="ze-snippet" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/snippet.js"></script><script type="text/javascript" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/asset_composer.5d2cd6d9613b85125812.js" charset="utf-8" async=""></script>
+
+
+
+<link rel="stylesheet" media="all" href="./AWS - Lab 4 - Creating a Highly Available Environment_files/application-a53cf05bc9e39a99a1d6fa14f486d7ecec091bb67f0aca5b1257120cbf85ec76.css">
+<script>
+  EVENT_SOURCE_BASE_URL = "https://china-aws.qwiklabs.com/nchan-sub?id=";
+</script>
+<script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/webcomponents-loader.js"></script>
+<script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/hallofmirrors-0ecc40b22ffa59a068e7d11793e27822439d8d266fcf33fd5a8cc0f562a65a1d.js"></script><script async="" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/lazy.min.js"></script>
+<script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/iframe_api"></script>
+<script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/vendor-45d462772c30000424907184f70c7157e95fb6227698d1671c5051818a6f60d8.js"></script>
+<script src="./AWS - Lab 4 - Creating a Highly Available Environment_files/application-b19a78a33162e21e69548c829637ee074da544a00456ffbc7388e16ea7e81624.js"></script>
+</head>
+<body class="focuses focuses-show lab-show l-full no-nav" style="">
+<div class="header-container">
+<div class="header">
+<a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect header__button header__button--nav header__nav-panel-button js-nav-toggle" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">menu</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header__title">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--nav" href="https://china-aws.qwiklabs.com/classrooms/30842" data-upgraded=",MaterialButton,MaterialRipple"><ql-icon>arrow_back</ql-icon><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<h1 class="headline-5">
+Architecting on AWS - Lab 4 - Creating a Highly Available Environment
+</h1>
+</div>
+<div class="header__actions">
+
+<ql-help context="lab" productdata="{&quot;userId&quot;:318010}"></ql-help>
+<a class="header-my-account-button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect js-my-account-button" data-upgraded=",MaterialButton,MaterialRipple">
+<img class="avatar " src="./AWS - Lab 4 - Creating a Highly Available Environment_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header-my-account-menu js-my-account-menu">
+<div class="card elevation-2 no-padding">
+<div class="my-account-menu__top">
+<img class="avatar " src="./AWS - Lab 4 - Creating a Highly Available Environment_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<div class="my-account-menu__info">
+<h4 class="subtitle-headline-1">
+Alpha Wang
+</h4>
+<p class="body-2 text--gray">
+<span>awang@coupang.com</span>
+</p>
+<a class="button" href="https://china-aws.qwiklabs.com/my_account/profile">我的账户</a>
+</div>
+</div>
+<div class="my-account-menu__bottom">
+<a class="button button--hairline" rel="nofollow" data-method="delete" href="https://china-aws.qwiklabs.com/users/sign_out">退出</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<nav class="nav-bar">
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-bar__item__icon">
+home
+</ql-icon>
+<span class="nav-bar__item__label">
+Home
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-bar__item__icon">
+school
+</ql-icon>
+<span class="nav-bar__item__label">
+Catalog
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button  active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-bar__item__icon">
+event_note
+</ql-icon>
+<span class="nav-bar__item__label">
+My Learning
+</span>
+</a>
+</nav>
+
+<nav class="nav-panel js-nav-panel">
+<div class="nav-panel__logo">
+<div class="custom-logo"><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/AWS-Logo-Sized.png"></div>
+</div>
+<a title="Home" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-panel__item__icon">
+home
+</ql-icon>
+<div class="nav-panel__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-panel__item__icon">
+school
+</ql-icon>
+<div class="nav-panel__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" tabindex="-1" class="nav-panel__item js-navigation-button active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-panel__item__icon">
+event_note
+</ql-icon>
+<div class="nav-panel__item__label">
+My Learning
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a title="Profile" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/profile"><ql-icon class="nav-panel__item__icon">
+account_circle
+</ql-icon>
+<div class="nav-panel__item__label">
+Profile
+</div>
+</a>
+<a title="Credits &amp; Subscriptions" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/credits"><ql-icon class="nav-panel__item__icon">
+money
+</ql-icon>
+<div class="nav-panel__item__label">
+Credits &amp; Subscriptions
+</div>
+</a>
+<a title="Security" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/security"><ql-icon class="nav-panel__item__icon">
+security
+</ql-icon>
+<div class="nav-panel__item__label">
+Security
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a class="nav-panel__item" tabindex="-1" href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#"><ql-help>
+<div class="nav-panel__help-item">
+<ql-icon class="nav-panel__item__icon">help</ql-icon>
+<div class="nav-panel__item__label">Help</div>
+</div>
+</ql-help>
+</a><div class="nav-panel__small-links">
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/privacy_policy">隐私政策</a>
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/terms_of_service">服务条款</a>
+</div>
+</nav>
+<div class="nav-panel__overlay js-nav-toggle"></div>
+
+<main class="js-main">
+<span class="hidden" id="flash-sibling-before"></span>
+
+<div class="l-main-wrapper" id="main-wrapper">
+
+
+
+
+
+
+
+<div class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;Architecting on AWS - Lab 4 - Creating a Highly Available Environment&quot;,&quot;lab_name&quot;:&quot;Architecting on AWS - Lab 4 - Creating a Highly Available Environment&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;china-aws&quot;}" data-focus-id="166976" data-lab-billing-limit="0.0" data-lab-duration="10800" data-parent="classroom"></div>
+<ql-lab-control-panel class="js-lab-control-panel l-lab-control-panel" connectiondetails="[]" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:10800}" studentresources="[]"></ql-lab-control-panel>
+<div class="">
+<div class="js-lab-content lab-content">
+
+<div class="lab-content__markdown-wrapper">
+<div class="lab-preamble">
+<h1 class="lab-preamble__title">
+Architecting on AWS - Lab 4 - Creating a Highly Available Environment
+</h1>
+<div class="lab-preamble__details subtitle-headline-1">
+<span>小时 </span>
+<span>免费</span>
+<div class="lab__rating">
+<a href="https://china-aws.qwiklabs.com/focuses/166976/reviews?parent=catalog"><div class="rateit" data-rateit-readonly="true" data-rateit-value="4.6263"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 74.0208px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+
+</a><a data-target="#lab-review-modal" data-toggle="modal">
+我的评级
+</a>
+</div>
+</div>
+</div>
+
+<div class="lab-content__inner-wrapper">
+<div class="js-markdown-instructions lab-content__markdown markdown-lab-instructions" id="markdown-lab-instructions">
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/aws-logo.png" alt=""></p>
+
+
+
+<p>© 2019 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.</p>
+
+<p>Errors or corrections? Email us at <a href="mailto:aws-course-feedback@amazon.com" target="_blank">aws-course-feedback@amazon.com</a>.</p>
+
+<p>Other questions? Contact us at <a href="https://aws.amazon.com/contact-us/aws-training/" target="_blank">https://aws.amazon.com/contact-us/aws-training/</a></p>
+
+<p>Critical business systems should be deployed as <em>Highly Available applications</em>, meaning that they can remain operational even when some components fail. To achieve High Availability in AWS, it is recommended to <strong>run services across multiple Availability Zones</strong>.</p>
+
+<p>Many AWS services are inherently highly available, such as Load Balancers, or can be configured for high availability, such as deploying Amazon EC2 instances in multiple Availability Zones.</p>
+
+<p>In this lab, you will start with an application running on a single Amazon EC2 instance and will then convert it to be Highly Available.</p>
+
+<p>In this lab you will:</p>
+<ul>
+<li>Inspect a provided VPC</li>
+<li>Create an Application Load Balancer</li>
+<li>Create an Auto Scaling Group</li>
+<li>Test the application for <em>High Availability</em>
+</li>
+</ul>
+<p>The final product of your lab will be this:</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/architecture.png" alt="Architecture"></p>
+
+<p><strong>Duration</strong></p>
+
+<p>The lab requires approximately <strong>40 minutes</strong> to complete.</p>
+
+
+
+<h2 id="step1">Start Lab</h2>
+<ol start="1">
+<li>At the top of your screen, launch your lab by clicking <span style="background-color:#34A853;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#34A853;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Start Lab</span>
+</li>
+</ol>
+<p>This will start the process of provisioning your lab resources. An estimated amount of time to provision your lab resources will be displayed. You must wait for your resources to be provisioned before continuing.</p>
+
+<p><i class="fas fa-info-circle"></i> If you are prompted for a token, use the one distributed to you (or credits you have purchased). </p>
+<ol start="2">
+<li><p>Open your lab by clicking <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span><br>
+This will open an AWS Management Console sign-in page.</p></li>
+<li><p>On the Sign-in page, configure:</p></li>
+</ol><ul>
+<li>
+<strong>IAM user name:</strong> <input readonly="" class="copyable-inline-input" size="10" type="text" value="awsstudent">
+</li>
+<li>
+<strong>Password:</strong> Paste the value of <strong>Password</strong> located to the left of these instructions.</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Sign In</span>
+</li>
+</ul>
+<p><i class="fas fa-exclamation-triangle"></i> <strong>Please do not change the Region unless instructed</strong>.</p>
+
+
+
+<h3>Common login errors</h3>
+
+<p><strong>Error: You must first log out</strong></p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/logouterror.png" alt=""></p>
+
+<p>If you see the message, <strong>You must first log out before logging into a different AWS account:</strong> </p>
+<ul>
+<li>Click <strong>click here</strong>
+</li>
+<li>Close your browser tab to return to your initial Qwiklabs window</li>
+<li>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span> again</li>
+</ul>
+
+
+
+
+<h2 id="step2">Task 1: Inspect your VPC</h2>
+
+<p>This lab begins with an environment already deployed via AWS CloudFormation including:</p>
+<ul>
+<li>An Amazon VPC</li>
+<li>Public and Private Subnets in two Availability Zones</li>
+<li>An Internet Gateway (not shown) associated with the Public subnets</li>
+<li>A NAT Gateway in one of the Public subnets</li>
+<li>An Amazon RDS instance in one of the Private subnets</li>
+</ul>
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/starting.png" alt="Starting"></p>
+
+<p>In this task, you will review the configuration of the VPC that has already been created.</p>
+<ol start="4">
+<li><p>On the <strong>AWS Management Console</strong>, on the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>VPC</strong>.</p></li>
+<li><p>In the left navigation pane, under <strong>Filter by VPC</strong>, click in the <i class="fas fa-search"></i> <strong>Select a VPC</strong> box and select <strong>Lab VPC</strong>.</p></li>
+</ol>
+<p>This will limit the console to only show resources associated with the <em>Lab VPC</em>.</p>
+<ol start="6">
+<li>In the left navigation pane, click <strong>Your VPCs</strong>.</li>
+</ol>
+<p>Here you can see the <strong>Lab VPC</strong> that has been created for you.</p>
+
+<p>In the <strong>CIDR</strong> column, you will see a value of <strong>10.0.0.0/16</strong>, which means this VPC includes all IP addresses that start with 10.0.x.x.</p>
+<ol start="7">
+<li>In the left navigation pane, click <strong>Subnets</strong>.</li>
+</ol>
+<p>Here you can see <strong>Public Subnet 1:</strong></p>
+<ul>
+<li>In the <strong>VPC</strong> column, you can see that this subnet exists inside of <strong>Lab VPC</strong>.</li>
+<li>In the <strong>IPv4 CIDR</strong> column, you can see a value of <strong>10.0.0.0/24</strong>, which means this subnet includes the 256 IPs (5 of which are reserved and unusable) between <em>10.0.0.0</em> and <em>10.0.0.255</em>.</li>
+<li>In the <strong>Availability Zone</strong> column, you can see the Availability Zone in which this subnet resides.</li>
+</ul><ol start="8">
+<li>Select <i class="far fa-check-square"></i> <strong>Public Subnet 1</strong> to reveal more details at the bottom of the page.</li>
+</ol>
+<p><strong>Tip:</strong> You can draw the divider up and down to expand the lower window pane.</p>
+<ol start="9">
+<li>Click the <strong>Route Table</strong> tab in the lower half of the page.</li>
+</ol>
+<p>Here you can see details about the routing for this subnet:</p>
+<ul>
+<li>The first entry specifies that traffic destined within the VPC's CIDR range (<strong>10.0.0.0/16</strong>) will be routed within the VPC (<strong>local</strong>).</li>
+<li>The second entry specifies that any traffic destined for the Internet (<strong>0.0.0.0/0</strong>) is routed to the Internet Gateway (<em>igw-</em>).  This setting makes it a <em>Public Subnet</em>.</li>
+</ul><ol start="10">
+<li>Click the <strong>Network ACL</strong> tab.</li>
+</ol>
+<p>Here you can see the Network Access Control List (ACL) associated with the subnet. The rules currently permit <em>ALL Traffic</em> to flow in and out of the subnet, but they can be further restricted by using Security Groups.</p>
+<ol start="11">
+<li>In the left navigation pane, click <strong>Internet Gateways</strong>.</li>
+</ol>
+<p>Notice that an Internet Gateway is already associated with Lab VPC.</p>
+<ol start="12">
+<li><p>In the left navigation pane, click <strong>Security Groups</strong>.</p></li>
+<li><p>Select <i class="far fa-check-square"></i> <strong>Inventory DB</strong>.</p></li>
+</ol>
+<p>This is the security group used to control incoming traffic to the Database.</p>
+<ol start="14">
+<li>Click the <strong>Inbound Rules</strong> tab in the lower half of the page.</li>
+</ol>
+<p>It is permitting inbound MySQL/Aurora traffic (port 3306) from anywhere within the VPC (<em>10.0.0.0/16</em>). You will later modify this to only accept traffic from the application servers.</p>
+<ol start="15">
+<li>Click the <strong>Outbound Rules</strong> tab.</li>
+</ol>
+<p>By default, Security Groups allow all outbound traffic. However, the can be modified as necessary.</p>
+
+
+
+<h2 id="step3">Task 2: Create an Application Load Balancer</h2>
+
+<p>To build a Highly Available application, it is best practice to launch resources in <strong>multiple Availability Zones</strong>. Availability Zones are physically separate data centers (or groups of data centers) within the same Region. Running your applications across multiple Availability Zones will provide greater <em>availability</em> in case of failure within a data center.</p>
+
+<p>Given that the application is running on multiple application servers, you will need a way to distribute traffic amongst those servers. This can be accomplished by using a <strong>Load Balancer</strong>, which also performs health checks on instances and only sends requests to healthy instances.</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/load-balancing.png" alt="Load Balancing"></p>
+<ol start="16">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>EC2</strong>.</p></li>
+<li><p>In the left navigation pane, click <strong>Load Balancers</strong> (you might need to scroll down to find it).</p></li>
+<li><p>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create Load Balancer</span></p></li>
+</ol>
+<p>Several types of Load Balancers are displayed. Read the descriptions of each type to understand their capabilities.</p>
+<ol start="19">
+<li><p>Under <strong>Application Load Balancer</strong>, click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create</span></p></li>
+<li><p>For <strong>Name</strong>, enter: <input readonly="" class="copyable-inline-input" size="12" type="text" value="Inventory-LB"></p></li>
+<li><p>Scroll down to the <strong>Availability Zones</strong> section, then:</p></li>
+</ol><ul>
+<li>For <strong>VPC</strong>, select: <strong>Lab VPC</strong>
+</li>
+</ul>
+<p>You will now specify which <em>subnets</em> the Load Balancer should use. It will be an Internet-facing load balancer, so you will select both Public Subnets.</p>
+<ol start="22">
+<li><p>Click the <strong>first</strong> displayed Availability Zone, then click the <strong>Public Subnet</strong> displayed underneath.</p></li>
+<li><p>Click the <strong>second</strong> displayed Availability Zone, then click the <strong>Public Subnet</strong> displayed underneath.</p></li>
+</ol>
+<p>You should now have two subnets selected: <strong>Public Subnet 1</strong> and <strong>Public Subnet 2</strong>. (If not, go back and try the configuration again.)</p>
+<ol start="24">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Next: Configure Security Settings</span>
+</li>
+</ol>
+<p>A warning is displayed, which recommends using HTTPS for improved security. This is good advice, but is not necessary for this lab.</p>
+<ol start="25">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Next: Configure Security Groups</span>
+</li>
+</ol>
+<p>You will now create a security group that accepts all incoming <em>HTTP</em> and <em>HTTPS</em> traffic.</p>
+<ol start="26">
+<li>Select <i class="far fa-dot-circle"></i> <strong>Create a <em>new</em> security group</strong>, then configure:</li>
+</ol><ul>
+<li>
+<strong>Security group name:</strong> <input readonly="" class="copyable-inline-input" size="12" type="text" value="Inventory-LB">
+</li>
+<li>
+<strong>Description:</strong> <input readonly="" class="copyable-inline-input" size="34" type="text" value="Enable web access to Load Balancer">
+</li>
+</ul><ol start="27">
+<li>Configure the existing rule (already shown on the page) as:</li>
+</ol><ul>
+<li>
+<strong>Type:</strong> <em>HTTP</em>
+</li>
+<li>
+<strong>Source:</strong> <em>Anywhere</em>
+</li>
+</ul><ol start="28">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Add Rule</span> and configure:</li>
+</ol><ul>
+<li>
+<strong>Type:</strong> <em>HTTPS</em>
+</li>
+<li>
+<strong>Source:</strong> <em>Anywhere</em>
+</li>
+</ul>
+<p>These settings will accept all incoming HTTP and HTTPS requests.</p>
+<ol start="29">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Next: Configure Routing</span>
+</li>
+</ol>
+<p><em>Target Groups</em> define where to <em>send</em> traffic that comes into the Load Balancer. The Application Load Balancer can send traffic to multiple Target Groups based upon the URL of the incoming request, such as having requests from mobile apps going to a different set of servers. Your web application will use only one Target Group.</p>
+<ol start="30">
+<li><p>For <strong>Name</strong>, enter: <input readonly="" class="copyable-inline-input" size="13" type="text" value="Inventory-App"></p></li>
+<li><p>Expand <i class="fas fa-caret-right"></i> <strong>Advanced health check settings</strong>.</p></li>
+</ol>
+<p>The Application Load Balancer automatically performs <em>Health Checks</em> on all instances to ensure that they are responding to requests. The default settings are recommended, but you will make them slightly faster for use in this lab.</p>
+<ol start="32">
+<li>Configure these values:</li>
+</ol><ul>
+<li>
+<strong>Healthy threshold:</strong> <input readonly="" class="copyable-inline-input" size="1" type="text" value="2">
+</li>
+<li>
+<strong>Interval:</strong> <input readonly="" class="copyable-inline-input" size="2" type="text" value="10">
+</li>
+</ul>
+<p>This means that the Health Check will be performed every 10 seconds and if the instance responds correctly twice in a row, it will be considered healthy.</p>
+<ol start="33">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Next: Register Targets</span>
+</li>
+</ol>
+<p><em>Targets</em> are the individual instances that will respond to requests from the Load Balancer. You do not have any web application instances yet, so you can skip this step.</p>
+<ol start="34">
+<li><p>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Next: Review</span></p></li>
+<li><p>Review the settings and click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create</span> then <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Close</span></p></li>
+</ol>
+<p>Your Load Balancer will now be provisioned in the background. There is no need to wait.</p>
+
+
+
+<h2 id="step4">Task 3: Create an Auto Scaling Group</h2>
+
+<p><strong>Amazon EC2 Auto Scaling</strong> is a service designed to <em>launch</em> or <em>terminate</em> Amazon EC2 instances automatically based on user-defined policies, schedules, and health checks. It also <strong>automatically distributes instances across multiple Availability Zones</strong> to make applications <em>Highly Available</em>.</p>
+
+<p>In this task, you will create an Auto Scaling group that deploys Amazon EC2 instances across your <em>Private Subnets</em>. This is best practice security for deploying applications because instances in a private subnet cannot be accessed from the Internet. Instead, users will send requests to the Load Balancer, which will forward the requests to Amazon EC2 instances in the private subnets.</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/load-balancing.png" alt="Load Balancing"></p>
+<ol start="36">
+<li><p>In the left navigation pane, click <strong>Auto Scaling Groups</strong>.</p></li>
+<li><p>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create Auto Scaling group</span> then click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Get started</span></p></li>
+</ol>
+<p>You will first create a <em>Launch Configuration</em>, which defines what type of instances should be launched by Auto Scaling. The interface looks similar to launching an Amazon EC2 instance, but rather than launching an instance it simply <em>stores</em> the configuration for later use.</p>
+<ol start="38">
+<li>Configure the following:</li>
+</ol><ul>
+<li>
+<p>Step 1 (Choose AMI):</p>
+<ul>
+<li>
+<strong>AMI:</strong> Amazon Linux 2 AMI (at the top)</li>
+</ul>
+</li>
+<li>
+<p>Step 2 (Choose Instance Type):</p>
+<ul>
+<li>
+<strong>Instance Type:</strong> t3.micro</li>
+</ul>
+</li>
+<li>
+<p>Step 3 (Configure details):</p>
+<ul>
+<li>
+<strong>Name:</strong> <input readonly="" class="copyable-inline-input" size="12" type="text" value="Inventory-LC">
+</li>
+<li>
+<strong>IAM Role:</strong> <em>Inventory-App-Role</em>
+</li>
+<li>
+<strong>User Data</strong> (Under <i class="fas fa-caret-right"></i> <strong>Advanced Details</strong>): Copy and paste this script:</li>
+</ul>
+</li>
+</ul><pre class="highlight plaintext"><code>#!/bin/bash
+# Install Apache Web Server and PHP
+yum install -y httpd mysql
+amazon-linux-extras install -y php7.2
+# Download Lab files
+wget https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-ARCHIT/v6.5.3/lab-2-webapp/scripts/inventory-app.zip
+unzip inventory-app.zip -d /var/www/html/
+# Download and install the AWS SDK for PHP
+wget https://github.com/aws/aws-sdk-php/releases/download/3.62.3/aws.zip
+unzip aws -d /var/www/html
+# Turn on web server
+chkconfig httpd on
+service httpd start
+</code><button class="button button--copy js-copy-button-0"><i class="fa fa-clipboard"></i></button></pre><ul>
+<li>
+<p>Step 4 (Add Storage)</p>
+<ul>
+<li>Use default settings (no changes)</li>
+</ul>
+</li>
+<li>
+<p>Step 5 (Configure Security Group):</p>
+<ul>
+<li>
+<strong>Select an existing security group:</strong> <em>Inventory-App</em>
+</li>
+</ul>
+</li>
+</ul>
+<p><i class="fas fa-comment"></i> You will receive a warning that <em>You will not able able to connect to the instance</em>. This is acceptable because you will not be connecting to the instance. All configuration is done via the User Data script.</p>
+<ul>
+<li>Step 6 (Review):
+<ul>
+<li>
+<span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create launch configuration</span> then:</li>
+<li>Select <strong>Proceed without a key pair</strong>.</li>
+<li>Select <i class="far fa-check-square"></i> <strong>I acknowledge that...</strong>
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create launch configuration</span>
+</li>
+</ul>
+</li>
+</ul>
+<p>You will immediately be taken to the <strong>Create Auto Scaling group</strong> configuration screen.</p>
+
+<p>While the <em>Launch Configuration</em> defined <strong>what to launch</strong>, the <em>Auto Scaling group</em> defines <strong>where to launch</strong> the resources.</p>
+<ol start="39">
+<li>Configure the following:</li>
+</ol><ul>
+<li>Step 1 (Configure Auto Scaling group details):
+<ul>
+<li>
+<strong>Group name:</strong> <input readonly="" class="copyable-inline-input" size="13" type="text" value="Inventory-ASG"> (ASG = <em>Auto Scaling Group</em>)</li>
+<li>
+<strong>Group size:</strong> <input readonly="" class="copyable-inline-input" size="1" type="text" value="2"> instances</li>
+<li>
+<strong>Network:</strong> <em>Lab VPC</em>
+</li>
+<li>
+<strong>Subnet:</strong> Select <strong>Private Subnet 1</strong> <em>AND</em> <strong>Private Subnet 2</strong>
+</li>
+</ul>
+</li>
+</ul>
+<p><i class="fas fa-comment"></i> You can ignore the warning that says <em>No public IP addresses will be assigned</em>. The Amazon EC2 instances will be launched in a <em>private subnet</em>, so they do not require public IP addresses.</p>
+<ul>
+<li>Expand <i class="fas fa-caret-right"></i> <strong>Advanced Details</strong>
+<ul>
+<li>Select <i class="far fa-check-square"></i> <strong>Load Balancing</strong>
+</li>
+<li>
+<strong>Target Groups:</strong> <em>Inventory-App</em>
+</li>
+</ul>
+</li>
+</ul>
+<p>This tells the Auto Scaling group to register new EC2 instances as part of the <em>Inventory-App</em> target group that you created earlier. The Load Balancer will send traffic to instances that are in this target group.</p>
+<ul>
+<li>Step 2 (Configure scaling policies):
+<ul>
+<li>
+<i class="far fa-dot-circle"></i> <strong>Keep this group at its initial size</strong>
+</li>
+</ul>
+</li>
+</ul>
+<p>For this lab, you will <strong>maintain two instances at all times</strong> to ensure <em>High Availability</em>. If the application is expected to receive varying loads of traffic, it is also possible to create <em>scaling policies</em> that define when to launch/terminate instances. However, this is not necessary for the Inventory application in this lab.</p>
+<ul>
+<li>
+<p>Step 3 (Configure Notifications):</p>
+<ul>
+<li>(Nothing to configure on this step)</li>
+</ul>
+</li>
+<li>
+<p>Step 4 (Configure Tags):</p>
+<ul>
+<li>
+<strong>Key:</strong> <input readonly="" class="copyable-inline-input" size="4" type="text" value="Name">
+</li>
+<li>
+<strong>Value:</strong> <input readonly="" class="copyable-inline-input" size="13" type="text" value="Inventory-App">
+</li>
+<li>Select <i class="far fa-check-square"></i> <strong>Tag New Instances</strong>
+</li>
+</ul>
+</li>
+</ul>
+<p>This will <em>tag</em> the Auto Scaling group with a Name, which will also appear on the EC2 instances launched by the Auto Scaling group. This makes it easier to identify which Amazon EC2 instances are associated with which application. You could also add tags such as Cost Center to make it easier to assign application costs in the billing files.</p>
+<ul>
+<li>Step 5 (Review):
+<ul>
+<li><span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create Auto Scaling group</span></li>
+</ul>
+</li>
+</ul>
+<p>The <em>Inventory-ASG</em> will appear in the console:</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/asg-console.png" alt="Auto Scaling group console"></p>
+
+<p>This shows that:</p>
+<ul>
+<li>The group currently has <strong>no instances</strong>, but the <i class="fas fa-info-circle"></i> information icon indicates that instances are being launched. (Hover over the icon for more details.)</li>
+<li>The <strong>Desired</strong> quantity is 2 instances, so Auto Scaling will attempt to launch two instances to reach the desired quantity</li>
+<li>The <strong>Min</strong> and <strong>Max</strong> are also set to 2 instances, so Auto Scaling will try to always provide two instances, even in the event of failure.</li>
+</ul>
+<p>Your application will soon be running across two Availability Zones and Auto Scaling will maintain that configuration even if an instance or Availability Zone fails.</p>
+
+<p>After a minute, click <i class="fas fa-sync"></i> Refresh to update the display. It should show <strong>2 instances</strong> running.</p>
+
+
+
+<h2 id="step5">Task 4: Update Security Groups</h2>
+
+<p>The application you have deployed is a <strong>3-Tier architecture</strong>. You will now configure the Security Groups to enforce these tiers:</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/security.png" alt="Security"></p>
+
+<h3>Load Balancer Security Group</h3>
+
+<p>You already configured the <em>Load Balancer security group</em> when you created the load balancer. It accepts all incoming <em>HTTP</em> and <em>HTTPS</em> traffic.</p>
+
+<p>The load balancer has been configured to forward incoming requests to a <em>Target Group</em>. When Auto Scaling launches new instances, it will automatically add those instances to the Target Group.</p>
+
+<h3>Application Security Group</h3>
+
+<p>The <em>Application security group</em> was provided as part of the lab setup. You will now configure it to only accept incoming traffic from the load balancer.</p>
+<ol start="40">
+<li><p>In the left navigation pane, click <strong>Security Groups</strong>.</p></li>
+<li><p>Select <i class="far fa-check-square"></i> <strong>Inventory-App</strong>.</p></li>
+<li><p>Click the <strong>Inbound</strong> tab in the lower half of the page.</p></li>
+</ol>
+<p>The security group is currently empty. You will now add a rule to accept incoming <em>HTTP</em> traffic from the load balancer. There is no need to configure <em>HTTPS</em> traffic because the load balancer has been configured to forward HTTPS requests via HTTP. This offloads security to the load balancer, reducing the amount of work required by the individual application servers.</p>
+<ol start="43">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Edit</span> and configure:</li>
+</ol><ul>
+<li>
+<strong>Type:</strong> <em>HTTP</em>
+</li>
+<li>
+<strong>Source:</strong>
+<ul>
+<li>Click in the box beside <strong>Custom</strong>
+</li>
+<li>Delete the current contents</li>
+<li>Type <input readonly="" class="copyable-inline-input" size="2" type="text" value="sg">
+</li>
+<li>Select <strong>Inventory-LB</strong> from the list that appears</li>
+</ul>
+</li>
+<li>
+<strong>Description:</strong> <input readonly="" class="copyable-inline-input" size="26" type="text" value="Traffic from Load Balancer">
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save</span>
+</li>
+</ul>
+<p>The application servers can now receive traffic from the Load Balancer. This includes <em>Health Checks</em> that are performed automatically by the Load Balancer.</p>
+
+<h3>Database Security Group</h3>
+
+<p>You will now configure the <em>Database security group</em> to only accept incoming traffic from the application servers.</p>
+<ol start="44">
+<li>Select <i class="far fa-check-square"></i> <strong>Inventory-DB</strong> (and make sure no other security groups are selected).</li>
+</ol>
+<p>The existing rule permits traffic on port 3306 (used by MySQL) from any IP address within the VPC. This is a good rule, but the security can be tightened further.</p>
+<ol start="45">
+<li>In the <strong>Inbound</strong> tab, click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Edit</span> and configure:</li>
+</ol><ul>
+<li>Click in the box beside <strong>Custom</strong>
+</li>
+<li>Delete the current contents</li>
+<li>Type <input readonly="" class="copyable-inline-input" size="2" type="text" value="sg">
+</li>
+<li>Select <strong>Inventory-App</strong> from the list that appears</li>
+<li>
+<strong>Description:</strong> <input readonly="" class="copyable-inline-input" size="24" type="text" value="Traffic from App servers">
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save</span>
+</li>
+</ul>
+<p>You have now configured <em>3-Tier Security</em>, with each element in the tier only accepting traffic from the tier above.</p>
+
+<p>In addition, the use of private subnets means that there are two security barriers between the Internet and your application resources. This matches the best practice of applying multiple layers of security.</p>
+
+
+
+<h2 id="step6">Task 5: Test the Application</h2>
+
+<p>Your application is now ready for testing!</p>
+
+<p>In this task, you will confirm that your web application is running and you will test that it is Highly Available.</p>
+<ol start="46">
+<li>In the left navigation pane, click <strong>Target Groups</strong>.</li>
+</ol>
+<p>The <em>Inventory-App</em> group of instances will be displayed.</p>
+<ol start="47">
+<li>Click the <strong>Targets</strong> tab in the lower half of the page.</li>
+</ol>
+<p>You should see two <strong>Registered targets</strong>. The <em>Status</em> column shows the results of the Load Balancer Health Check that is performed against the instances.</p>
+<ol start="48">
+<li>Occasionally click <i class="fas fa-sync"></i> Refresh in the top-right until the <strong>Status</strong> for both instances appears as <strong><em>healthy</em></strong>.</li>
+</ol>
+<p>If the status does not eventually change to <em>healthy</em>, ask your instructor for assistance in diagnosing the configuration. Hovering over the <i class="fas fa-info-circle"></i> icon in the Status column will provide more information about the status.</p>
+
+<p>You will be testing the application by connecting to the Load Balancer, which will then send your request to one of the Amazon EC2 instances. You will first need to retrieve the DNS Name of the Load Balancer.</p>
+<ol start="49">
+<li><p>In the left navigation pane, click <strong>Load Balancers</strong>.</p></li>
+<li><p>In the <strong>Description</strong> tab in the lower half of the window, copy the <strong>DNS Name</strong> to your clipboard.</p></li>
+</ol>
+<p>It should be similar to: <em>inventory-LB-xxxx.elb.amazonaws.com</em></p>
+<ol start="51">
+<li>Open a new web browser tab, paste the DNS Name from your clipboard and hit Enter.</li>
+</ol>
+<p>The Load Balancer forwarded your request to one of the Amazon EC2 instances. The Instance ID and Availability Zone are shown at the bottom of the web page.</p>
+<ol start="52">
+<li>Reload <i class="fas fa-sync"></i> the page in your web browser. You should notice that the Instance ID and Availability Zone sometimes changes between the two instances.</li>
+</ol>
+<p>The flow of information when displaying this web application is:</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/request-flow.png" alt="Request flow"></p>
+<ul>
+<li>You sent the request to the <strong>Load Balancer</strong>, which resides in the <em>public subnets</em> that are connected to the Internet.</li>
+<li>The Load Balancer chose one of the <strong>Amazon EC2 instances</strong> that reside in the <em>private subnets</em> and forwarded the request to it.</li>
+<li>The Amazon EC2 instance then returned the web page to the Load Balancer, which returned it to your web browser.</li>
+</ul>
+
+
+<h2 id="step7">Task 6: Test High Availability</h2>
+
+<p>Your application has been configured to be Highly Available. This can be proven by terminating one of the Amazon EC2 instances.</p>
+<ol start="53">
+<li><p>Return to the EC2 Management Console tab in your web browser (but do not close the web application tab — you will return to it soon).</p></li>
+<li><p>In the left navigation pane, click <strong>Instances</strong>.</p></li>
+</ol>
+<p>You will now terminate one of the Web application instances to simulate a failure.</p>
+<ol start="55">
+<li><p>Select <i class="far fa-check-square"></i> one of the <strong>Inventory-App</strong> instances (it does not matter which one you select).</p></li>
+<li><p>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Actions <i class="fas fa-angle-down"></i></span> then <strong>Instance State &gt; Terminate</strong>.</p></li>
+</ol>
+<p>In a short time, the Load Balancer health checks will notice that the instance is not responding and will automatically route all requests to the remaining instance.</p>
+<ol start="57">
+<li>Return to the Web application tab in your web browser and reload <i class="fas fa-sync"></i> the page several times.</li>
+</ol>
+<p>You should notice that the <strong>Availability Zone</strong> shown at the bottom of the page stays the same. Even though an instance has failed, your application remains available!</p>
+
+<p>After a few minutes, Auto Scaling will also notice the instance failure. It has been configured to keep two instances running, so Auto Scaling will <strong>automatically launch a replacement instance</strong>.</p>
+<ol start="58">
+<li>Return to the EC2 Management Console tab in your web browser. Click refresh <i class="fas fa-sync"></i> in the top-right every 30 seconds until a new Amazon EC2 instance appears.</li>
+</ol>
+<p>After a few minutes, the Health Check for the new instance should become healthy and the Load Balancer will continue sending traffic between two Availability Zones. You can reload your Web application tab to see this happening.</p>
+
+<p>This demonstrates that your application is now <em>Highly Available</em>.</p>
+
+
+
+<h2 id="step8">Challenge: Make the Database Highly Available</h2>
+
+<p><i class="fas fa-comment"></i> <em>This challenge is <strong>optional</strong> and is provided in case you still have lab time remaining.</em></p>
+
+<p>The application architecture is now Highly Available. However, the Amazon RDS database is still operating from only one database instance.</p>
+
+<p>In this task, you will make the database Highly Available by configuring it to run across multiple Availability Zones ("multi-AZ").</p>
+<ol start="59">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>RDS</strong>.</p></li>
+<li><p>In the left navigation pane, click <strong>Databases</strong>.</p></li>
+<li><p>Click <span style="color:blue;">inventory-db</span>.</p></li>
+</ol>
+<p>Feel free to peruse the information displayed about the database.</p>
+<ol start="62">
+<li><p>Click <span style="background-color:white;font-weight:bold;font-size:90%;color:#545b64;border-color:#545b64;border-radius:2px;border-width:1px;border-style:solid;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Modify</span></p></li>
+<li><p>For <strong>Multi-AZ deployment</strong>, select <i class="far fa-dot-circle"></i> <strong>Yes</strong>.</p></li>
+</ol>
+<p>This is the only step necessary to convert the database to run across multiple data centers (Availability Zones).</p>
+
+<p>Note that this does not mean that the database is <em>distributed</em> across multiple instances. Rather, one instance is the <em>Master</em>, which is handling all requests. Another instance will be launched as the <em>Secondary</em> instance, which will take over in case the Master fails. Your application continues to use the same DNS Name for the database, but the connections will automatically redirect to the currently active database server.</p>
+
+<p>Just as it is possible to scale an Amazon EC2 instance by changing attributes, it is also possible to scale an Amazon RDS database. You will now scale-up the database.</p>
+<ol start="64">
+<li>For <strong>DB instance class</strong>, select <strong>db.t3.small</strong>.</li>
+</ol>
+<p>This will double the size of the instance.</p>
+<ol start="65">
+<li>For <strong>Allocated storage</strong>, enter: <input readonly="" class="copyable-inline-input" size="2" type="text" value="10">
+</li>
+</ol>
+<p>This will double the amount of space allocated to the database.</p>
+
+<p>Feel free to peruse the other options on the page, but do not change any of the values.</p>
+<ol start="66">
+<li>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Continue</span> at the bottom of the page.</li>
+</ol>
+<p>Database performance will be impacted by these changes. Therefore, they can be scheduled during a defined maintenance window, or run immediately.</p>
+<ol start="67">
+<li><p>Under <strong>Scheduling of Modifications</strong>, select <i class="far fa-dot-circle"></i> <strong>Apply immediately</strong>.</p></li>
+<li><p>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Modify DB instance</span></p></li>
+</ol>
+<p>The database will enter a <em>modifying</em> state while changes are applied. There is no need to wait for it to complete.</p>
+
+
+
+<h2 id="step9">Challenge: High Availability NAT Gateway</h2>
+
+<p>The application servers are running in a private subnet. If they need to access the internet (eg to download data), the requests must be redirected through a <em>NAT Gateway</em> (located in a public subnet).</p>
+
+<p>The current architecture has only one NAT Gateway in <em>Public Subnet 1</em>. This means that if Availability Zone 1 failed, the application servers would not be able to communicate with the internet.</p>
+
+<p>In this challenge, you will make the NAT Gateway highly available by launching another NAT Gateway in the other Availability Zone. The resulting architecture will be highly available:</p>
+
+<p><img src="./AWS - Lab 4 - Creating a Highly Available Environment_files/architecture.png" alt="Architecture"></p>
+<ol start="69">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>VPC</strong>.</p></li>
+<li><p>In the left navigation pane, click <strong>NAT Gateways</strong>.</p></li>
+</ol>
+<p>The existing NAT Gateway is displayed. You will now create one for the other Availability Zone.</p>
+<ol start="71">
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create NAT Gateway</span> and configure:</li>
+</ol><ul>
+<li>
+<strong>Subnet:</strong> Select the subnet that is shown to the left of these instructions as <strong>PublicSubnet2</strong>
+</li>
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create New EIP</span>
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create a NAT Gateway</span>
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Edit route tables</span>
+</li>
+</ul>
+<p>You will now create a new Route Table for <em>Private Subnet 2</em> that redirects traffic to the new NAT Gateway.</p>
+<ol start="72">
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create route table</span> and configure:</li>
+</ol><ul>
+<li>
+<strong>Name tag:</strong> <input readonly="" class="copyable-inline-input" size="21" type="text" value="Private Route Table 2">
+</li>
+<li>
+<strong>VPC:</strong> <em>Lab VPC</em>
+</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create</span> then click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Close</span>
+</li>
+</ul><ol start="73">
+<li><p>Select <i class="far fa-check-square"></i> <strong>Private Route Table 2</strong>, ensuring that it is the only route table selected.</p></li>
+<li><p>Click the <strong>Routes</strong> tab.</p></li>
+</ol>
+<p>There is currently one route that directs all traffic <em>locally</em>.</p>
+
+<p>You will now add a route to send internet-bound traffic through the new NAT Gateway.</p>
+<ol start="75">
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Edit routes</span> then:</li>
+</ol><ul>
+<li>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Add route</span>
+</li>
+<li>
+<strong>Destination:</strong> <input readonly="" class="copyable-inline-input" size="9" type="text" value="0.0.0.0/0">
+</li>
+<li>
+<strong>Target:</strong> Select <em>NAT Gateway</em> then select the <em>nat-</em> entry that is <strong>not</strong> the one shown to the left of these instructions</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save routes</span> then click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Close</span>
+</li>
+</ul>
+<p><i class="fas fa-comment"></i>  The NAT Gateway shown to the left is for <em>Public Subnet 1</em>. You are configuring the route table to use the <em>other</em> NAT Gateway.</p>
+<ol start="76">
+<li><p>Click the <strong>Subnet Associations</strong> tab.</p></li>
+<li><p>Click <span style="background-color:#DEDEDE;font-weight:bold;font-size:90%;color:#444;border-radius:5px;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Edit subnet associations</span></p></li>
+<li><p>Select <i class="far fa-check-square"></i> <strong>Private Subnet 2</strong>.</p></li>
+<li><p>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save</span></p></li>
+</ol>
+<p>This will now send internet-bound traffic from Private Subnet 2 to the NAT Gateway that is in the same availability zone.</p>
+
+<p>Your NAT Gateways are now highly available. A failure in one AZ will not impact traffic in the other AZ.</p>
+
+
+
+<h2 id="step10">Lab Complete</h2>
+
+<p><i class="icon-flag-checkered"></i> Congratulations! You have completed the lab.</p>
+
+<h2 id="step11">End Lab</h2>
+
+<p>Follow these steps to close the console, end your lab, and evaluate the experience.</p>
+<ol start="80">
+<li><p>Return to the AWS Management Console.</p></li>
+<li><p>On the navigation bar, click <strong>awsstudent@&lt;AccountNumber&gt;</strong>, and then click <strong>Sign Out</strong>.</p></li>
+<li><p>Click <span style="background-color:#D93025;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#D93025;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">End Lab</span></p></li>
+<li><p>Click <span style="background-color:#DEDEDE;font-family:Google Sans;font-weight:bold;font-size:90%;color:#444;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">OK</span></p></li>
+<li><p>(Optional):</p></li>
+</ol><ul>
+<li>Select the applicable number of stars <i class="far fa-star"></i>
+</li>
+<li>Type a comment</li>
+<li>
+<p>Click <strong>Submit</strong></p>
+<ul>
+<li>1 star = Very dissatisfied</li>
+<li>2 stars = Dissatisfied</li>
+<li>3 stars = Neutral</li>
+<li>4 stars = Satisfied</li>
+<li>5 stars = Very satisfied</li>
+</ul>
+</li>
+</ul>
+<p>You may close the dialog if you don't want to provide feedback.</p>
+
+</div>
+<div class="js-lab-content-outline lab-content__outline">
+<a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step1" class="">Start Lab</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step2">Task 1: Inspect your VPC</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step3">Task 2: Create an Application Load Balancer</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step4">Task 3: Create an Auto Scaling Group</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step5">Task 4: Update Security Groups</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step6">Task 5: Test the Application</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step7">Task 6: Test High Availability</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step8">Challenge: Make the Database Highly Available</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step9">Challenge: High Availability NAT Gateway</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step10">Lab Complete</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166976#step11">End Lab</a>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="lab-introduction js-lab-introduction is-hidden">
+<div class="lab-introduction__inner">
+<h1 class="headline-1">Welcome to Your First Lab!</h1>
+<ql-icon-button class="js-skip-button">close</ql-icon-button>
+<div class="lab-introduction__video">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/yF7EDXKTmoQ.html"></iframe>
+</div>
+<a class="js-skip-button button button--outline">Skip this video</a>
+</div>
+</div>
+
+
+
+</div>
+</main>
+<div class="modal fade" id="lab-details-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<div class="modal-body">
+<p class="l-mbm">
+In this lab, you will start with an application running on a single Amazon EC2 instance and will then convert it to be Highly Available.
+</p>
+<p class="small-label l-mbs">
+<strong>
+持续时间：
+</strong>
+9建立
+·
+180时间允许
+·
+180为期
+</p>
+<p class="small-label l-mbs">
+<strong>亚马逊网络服务系统区域：</strong>
+[us-west-2] <strong>US West (Oregon)</strong>
+</p>
+<p class="small-label l-mbs">
+
+</p>
+<p class="small-label">
+<strong>
+Permalink:
+</strong>
+<a href="https://china-aws.qwiklabs.com/catalog_lab/5104">https://china-aws.qwiklabs.com/catalog_lab/5104</a>
+</p>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Got It
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/saved_resource.html"></iframe>
+</div>
+<div class="modal fade" id="lab-review-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<form class="simple_form js-lab-review-form" id="edit_lab_review_628086" action="https://china-aws.qwiklabs.com/lab_reviews/628086" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="_method" value="patch"><div class="modal-body">
+<p class="label">
+你对这实验练习感到满意吗？
+</p>
+<div class="rateit js-rateit" data-rateit-max="5" data-rateit-min="0" data-rateit-resetable="false" data-rateit-step="1" data-rateit-value="5"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 80px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+<div class="l-mtm">
+
+<div class="control-group hidden lab_review_user_id"><div class="controls"><input class="hidden" type="hidden" value="318010" name="lab_review[user_id]" id="lab_review_user_id"></div></div>
+<div class="control-group hidden lab_review_classroom_id"><div class="controls"><input class="hidden" type="hidden" value="30842" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div></div>
+<div class="control-group hidden lab_review_lab_id"><div class="controls"><input class="hidden" type="hidden" value="5104" name="lab_review[lab_id]" id="lab_review_lab_id"></div></div>
+<div class="control-group hidden lab_review_focus_id"><div class="controls"><input class="hidden" type="hidden" value="166976" name="lab_review[focus_id]" id="lab_review_focus_id"></div></div>
+<div class="control-group hidden lab_review_rating"><div class="controls"><input class="hidden js-rating-input" type="hidden" value="2" name="lab_review[rating]" id="lab_review_rating"></div></div>
+<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">评论</label><div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div></div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="提交" disabled="disabled" class="btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="submit" data-disabled="false" data-disable-with="提交" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></input>
+</div>
+</form>
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/saved_resource(1).html"></iframe>
+</div>
+
+<script>
+  $( function() {
+    ql.initMaterialInputs();
+    initChosen();
+    initSearch();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    ql.analytics.init();
+    initLabContent( );
+  ql.labOutline.links.init();
+  ql.labOutline.layout.init();
+  initLabReviewModal();
+  ql.labAssessment.init();
+  ql.labData.init();
+  initLabTranslations( {"are_you_sure":"全部做完了？如果您结束此实验练习，您将失去所有的工作。如果配额限制存在，您可能无法重新启动此实验练习。您确定您要结束此实验练习？\n","in_progress":"*进行中*","ending":"*结束*","starting":"*正在启动，请稍候*","end_concurrent_labs":"对不起，你只能在同一时间运行一个实验练习。要开始这个实验练习，请确认您希望把全部现有的实验练习结束。\n","copied":"复制完成","no_resource":"获取资源时有错误。","no_support":"没有支援 :(","mac_press":"按⌘-C复制","thanks_review":"感谢审阅了此实验练习。","windows_press":"按Ctrl-C复制","days":"天"} );
+  ql.labRun.init();
+  ql.initHeader();
+  ql.navigation.init();
+  ql.navPanel.init();
+  ql.navigation.init();
+  
+  });
+</script>
+<style>
+  .mdl-layout__container {
+    position: static
+  }
+</style>
+
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/saved_resource(2).html" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 114px;width: 114px;" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/saved_resource(3).html"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" src="./AWS - Lab 4 - Creating a Highly Available Environment_files/saved_resource(4).html"></iframe></div></body></html>

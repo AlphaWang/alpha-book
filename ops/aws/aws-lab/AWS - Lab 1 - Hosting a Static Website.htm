@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://china-aws.qwiklabs.com/classrooms/30842/labs/166973 -->
+<html lang="zh" class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./AWS - Lab 1 - Hosting a Static Website_files/caff0d62ed"></script><script src="./AWS - Lab 1 - Hosting a Static Website_files/nr-1153.min.js"></script><script type="text/javascript" id="www-widgetapi-script" src="./AWS - Lab 1 - Hosting a Static Website_files/www-widgetapi.js" async=""></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"caff0d62ed","applicationID":"7198647","transactionName":"IQ1XRUEOVV1dFxlRXAEXSlRATkpZVxI=","queueTime":0,"applicationTime":157,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"caff0d62ed",applicationID:"7198647"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta content="[]" name="active-experiments">
+<meta content="{&quot;userId&quot;:318010}" name="help-api-product-data">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="nPWXvlmAfSDv/m0kNOBAzOEGidbXazc25eaG5XHAGun/FcruSz2WvaQdc7RdAFKTmTM9rFsP1Tzpy8qd2IblUA==">
+<title>Architecting on AWS - Lab 1 - Hosting a Static Website | Qwiklabs</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+<meta content="This lab shows how to host a static website on Amazon S3." name="description">
+<meta content="Qwiklabs" name="author">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="Architecting on AWS - Lab 1 - Hosting a Static Website | Qwiklabs" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/favicon-144.png" property="og:image">
+<meta content="Qwiklabs" property="og:site_name">
+<meta content="This lab shows how to host a static website on Amazon S3." property="og:description">
+<meta content="/qwiklabs_logo_900x887.png" property="og:logo" size="900x887">
+<meta content="/qwiklabs_logo_994x187.png" property="og:logo" size="994x187">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/favicon-144.png" property="msapplication-TileImage">
+<link href="https://china-aws.qwiklabs.com/favicon-32.png" rel="shortcut icon">
+<link color="#3681E4" href="https://china-aws.qwiklabs.com/favicon-svg.svg" rel="mask-icon">
+<link href="https://china-aws.qwiklabs.com/favicon-180.png" rel="apple-touch-icon-precomposed">
+<link rel="stylesheet" media="screen" href="./AWS - Lab 1 - Hosting a Static Website_files/css">
+
+<link rel="stylesheet" media="screen" href="./AWS - Lab 1 - Hosting a Static Website_files/zh-baa812484310685c34f060fc93a4033f915219f35ede62badd48dfc59334e103.css">
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+<![endif]-->
+<!--[endif]>  <![endif]-->
+<script>
+//<![CDATA[
+window.gon={};gon.current_user={"firstname":"Alpha","lastname":"Wang","fullname":"Alpha Wang","company":"Coupang","email":"awang@coupang.com","origin":"china-aws, direct","subscriptions":0,"id":"5a6928df14236eb34d3e60852bd714db","qlCreatedAt":"2019-12-05 07:02:39 UTC","optIn":true};gon.segment=null;gon.deployment="china-aws";
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.qwiklabs.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.qwiklabs.com/catalog?keywords={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script id="ze-snippet" src="./AWS - Lab 1 - Hosting a Static Website_files/snippet.js"></script><script type="text/javascript" src="./AWS - Lab 1 - Hosting a Static Website_files/asset_composer.5d2cd6d9613b85125812.js" charset="utf-8" async=""></script>
+
+
+
+<link rel="stylesheet" media="all" href="./AWS - Lab 1 - Hosting a Static Website_files/application-a53cf05bc9e39a99a1d6fa14f486d7ecec091bb67f0aca5b1257120cbf85ec76.css">
+<script>
+  EVENT_SOURCE_BASE_URL = "https://china-aws.qwiklabs.com/nchan-sub?id=";
+</script>
+<script src="./AWS - Lab 1 - Hosting a Static Website_files/webcomponents-loader.js"></script>
+<script src="./AWS - Lab 1 - Hosting a Static Website_files/hallofmirrors-0ecc40b22ffa59a068e7d11793e27822439d8d266fcf33fd5a8cc0f562a65a1d.js"></script><script async="" src="./AWS - Lab 1 - Hosting a Static Website_files/lazy.min.js"></script>
+<script src="./AWS - Lab 1 - Hosting a Static Website_files/iframe_api"></script>
+<script src="./AWS - Lab 1 - Hosting a Static Website_files/vendor-45d462772c30000424907184f70c7157e95fb6227698d1671c5051818a6f60d8.js"></script>
+<script src="./AWS - Lab 1 - Hosting a Static Website_files/application-b19a78a33162e21e69548c829637ee074da544a00456ffbc7388e16ea7e81624.js"></script>
+</head>
+<body class="focuses focuses-show lab-show l-full no-nav" style="">
+<div class="header-container">
+<div class="header">
+<a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect header__button header__button--nav header__nav-panel-button js-nav-toggle" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">menu</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header__title">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--nav" href="https://china-aws.qwiklabs.com/classrooms/30842" data-upgraded=",MaterialButton,MaterialRipple"><ql-icon>arrow_back</ql-icon><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<h1 class="headline-5">
+Architecting on AWS - Lab 1 - Hosting a Static Website
+</h1>
+</div>
+<div class="header__actions">
+
+<ql-help context="lab" productdata="{&quot;userId&quot;:318010}"></ql-help>
+<a class="header-my-account-button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect js-my-account-button" data-upgraded=",MaterialButton,MaterialRipple">
+<img class="avatar " src="./AWS - Lab 1 - Hosting a Static Website_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header-my-account-menu js-my-account-menu">
+<div class="card elevation-2 no-padding">
+<div class="my-account-menu__top">
+<img class="avatar " src="./AWS - Lab 1 - Hosting a Static Website_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<div class="my-account-menu__info">
+<h4 class="subtitle-headline-1">
+Alpha Wang
+</h4>
+<p class="body-2 text--gray">
+<span>awang@coupang.com</span>
+</p>
+<a class="button" href="https://china-aws.qwiklabs.com/my_account/profile">我的账户</a>
+</div>
+</div>
+<div class="my-account-menu__bottom">
+<a class="button button--hairline" rel="nofollow" data-method="delete" href="https://china-aws.qwiklabs.com/users/sign_out">退出</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<nav class="nav-bar">
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-bar__item__icon">
+home
+</ql-icon>
+<span class="nav-bar__item__label">
+Home
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-bar__item__icon">
+school
+</ql-icon>
+<span class="nav-bar__item__label">
+Catalog
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button  active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-bar__item__icon">
+event_note
+</ql-icon>
+<span class="nav-bar__item__label">
+My Learning
+</span>
+</a>
+</nav>
+
+<nav class="nav-panel js-nav-panel">
+<div class="nav-panel__logo">
+<div class="custom-logo"><img src="./AWS - Lab 1 - Hosting a Static Website_files/AWS-Logo-Sized.png"></div>
+</div>
+<a title="Home" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-panel__item__icon">
+home
+</ql-icon>
+<div class="nav-panel__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-panel__item__icon">
+school
+</ql-icon>
+<div class="nav-panel__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" tabindex="-1" class="nav-panel__item js-navigation-button active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-panel__item__icon">
+event_note
+</ql-icon>
+<div class="nav-panel__item__label">
+My Learning
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a title="Profile" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/profile"><ql-icon class="nav-panel__item__icon">
+account_circle
+</ql-icon>
+<div class="nav-panel__item__label">
+Profile
+</div>
+</a>
+<a title="Credits &amp; Subscriptions" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/credits"><ql-icon class="nav-panel__item__icon">
+money
+</ql-icon>
+<div class="nav-panel__item__label">
+Credits &amp; Subscriptions
+</div>
+</a>
+<a title="Security" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/security"><ql-icon class="nav-panel__item__icon">
+security
+</ql-icon>
+<div class="nav-panel__item__label">
+Security
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a class="nav-panel__item" tabindex="-1" href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#"><ql-help>
+<div class="nav-panel__help-item">
+<ql-icon class="nav-panel__item__icon">help</ql-icon>
+<div class="nav-panel__item__label">Help</div>
+</div>
+</ql-help>
+</a><div class="nav-panel__small-links">
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/privacy_policy">隐私政策</a>
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/terms_of_service">服务条款</a>
+</div>
+</nav>
+<div class="nav-panel__overlay js-nav-toggle"></div>
+
+<main class="js-main">
+<span class="hidden" id="flash-sibling-before"></span>
+
+<div class="l-main-wrapper" id="main-wrapper">
+
+
+
+
+
+
+
+<div class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;Architecting on AWS - Lab 1 - Hosting a Static Website&quot;,&quot;lab_name&quot;:&quot;Architecting on AWS - Lab 1 - Hosting a Static Website&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;china-aws&quot;}" data-focus-id="166973" data-lab-billing-limit="0.0" data-lab-duration="3600" data-parent="classroom"></div>
+<ql-lab-control-panel class="js-lab-control-panel l-lab-control-panel" connectiondetails="[]" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:3600}" studentresources="[]"></ql-lab-control-panel>
+<div class="">
+<div class="js-lab-content lab-content">
+<div class="alert alert--fake js-alert">
+<p class="alert__message js-alert-message"></p>
+<a class="alert__close js-alert-close">
+<i class="fa fa-times"></i>
+</a>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource.html"></iframe>
+</div>
+<div class="lab-content__markdown-wrapper">
+<div class="lab-preamble">
+<h1 class="lab-preamble__title">
+Architecting on AWS - Lab 1 - Hosting a Static Website
+</h1>
+<div class="lab-preamble__details subtitle-headline-1">
+<span>小时 </span>
+<span>免费</span>
+<div class="lab__rating">
+<a href="https://china-aws.qwiklabs.com/focuses/166973/reviews?parent=catalog"><div class="rateit" data-rateit-readonly="true" data-rateit-value="4.6776"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 74.8416px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+
+</a><a data-target="#lab-review-modal" data-toggle="modal">
+我的评级
+</a>
+</div>
+</div>
+</div>
+
+<div class="lab-content__inner-wrapper">
+<div class="js-markdown-instructions lab-content__markdown markdown-lab-instructions" id="markdown-lab-instructions">
+<p><img src="./AWS - Lab 1 - Hosting a Static Website_files/aws-logo.png" alt=""></p>
+
+
+
+<p>© 2019 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.</p>
+
+<p>Errors or corrections? Email us at <a href="mailto:aws-course-feedback@amazon.com" target="_blank">aws-course-feedback@amazon.com</a>.</p>
+
+<p>Other questions? Contact us at <a href="https://aws.amazon.com/contact-us/aws-training/" target="_blank">https://aws.amazon.com/contact-us/aws-training/</a></p>
+
+<p>Static websites have fixed content with no back-end processing. They can contain HTML pages, images, style sheets and all files required to render the website, but there is no server-side scripting or database. If desired, the web pages can provide interactivity and run programming logic by using JavaScript that runs within the user's web browser.</p>
+
+<p>You can easily host a static website on Amazon Simple Storage Service (Amazon S3) by uploading the desired content and making it publicly accessible. No servers are required and you can use Amazon S3 to store and retrieve any amount of data at any time, from anywhere on the web.</p>
+
+<p>In this lab you will:</p>
+<ul>
+<li>Create a Bucket in Amazon S3</li>
+<li>Upload Content to your Bucket</li>
+<li>Enable Access to the Objects</li>
+<li>Update the Website</li>
+</ul>
+<p><strong>Duration</strong></p>
+
+<p>This lab will require approximately <strong>20 minutes</strong> to complete.</p>
+
+
+
+<h2 id="step1">Start Lab</h2>
+<ol start="1">
+<li>At the top of your screen, launch your lab by clicking <span style="background-color:#34A853;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#34A853;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Start Lab</span>
+</li>
+</ol>
+<p>This will start the process of provisioning your lab resources. An estimated amount of time to provision your lab resources will be displayed. You must wait for your resources to be provisioned before continuing.</p>
+
+<p><i class="fas fa-info-circle"></i> If you are prompted for a token, use the one distributed to you (or credits you have purchased). </p>
+<ol start="2">
+<li><p>Open your lab by clicking <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span><br>
+This will open an AWS Management Console sign-in page.</p></li>
+<li><p>On the Sign-in page, configure:</p></li>
+</ol><ul>
+<li>
+<strong>IAM user name:</strong> <input readonly="" class="copyable-inline-input" size="10" type="text" value="awsstudent">
+</li>
+<li>
+<strong>Password:</strong> Paste the value of <strong>Password</strong> located to the left of these instructions.</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Sign In</span>
+</li>
+</ul>
+<p><i class="fas fa-exclamation-triangle"></i> <strong>Please do not change the Region unless instructed</strong>.</p>
+
+
+
+<h3>Common login errors</h3>
+
+<p><strong>Error: You must first log out</strong></p>
+
+<p><img src="./AWS - Lab 1 - Hosting a Static Website_files/logouterror.png" alt=""></p>
+
+<p>If you see the message, <strong>You must first log out before logging into a different AWS account:</strong> </p>
+<ul>
+<li>Click <strong>click here</strong>
+</li>
+<li>Close your browser tab to return to your initial Qwiklabs window</li>
+<li>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span> again</li>
+</ul>
+
+
+
+
+<h2 id="step2">Task 1: Create a Bucket in Amazon S3</h2>
+
+<p>In this task, you will create an Amazon S3 bucket and configure it for static website hosting.</p>
+<ol start="4">
+<li><p>In the <strong>AWS Management Console</strong>, on the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>S3</strong>.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;"><i class="fas fa-plus"></i> Create bucket</span></p></li>
+</ol>
+<p>An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts. This means that after a bucket is created, the name of that bucket cannot be used by another AWS account in any AWS Region until the bucket is deleted.</p>
+
+<p>Therefore, for this lab you will use a bucket name with a random number, such as: <em>website-123</em></p>
+<ol start="6">
+<li><p>For <strong>Bucket name</strong> enter: <input readonly="" class="copyable-inline-input" size="11" type="text" value="website-123"> (Replacing <em>123</em> with a random number)</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Next</span></p></li>
+</ol>
+<p>You can use Tags to add additional information to a bucket, such as a project code, cost center or owner.</p>
+<ol start="8">
+<li>Under <strong>Tags</strong>, enter:</li>
+</ol><ul>
+<li>
+<strong>Key:</strong> <input readonly="" class="copyable-inline-input" size="10" type="text" value="Department">
+</li>
+<li>
+<strong>Value:</strong> <input readonly="" class="copyable-inline-input" size="9" type="text" value="Marketing">
+</li>
+</ul><ol start="9">
+<li>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Next</span>
+</li>
+</ol>
+<p>Public access to buckets is blocked by default. The files in your static website will need to be publicly accessible, so you will need to permit access.</p>
+<ol start="10">
+<li><p>Deselect (turn off) <strong>Block all public access</strong>.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Next</span></p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Create bucket</span></p></li>
+<li><p>Click the name of your new bucket.</p></li>
+</ol>
+<p>You will now configure the bucket for Static Website Hosting.</p>
+<ol start="14">
+<li><p>Click the <strong>Properties</strong> tab.</p></li>
+<li><p>Click <strong>Static website hosting</strong>.</p></li>
+<li><p>Click the <strong>Endpoint</strong> link.</p></li>
+</ol>
+<p>You will receive a <strong>404 Not Found</strong> error because the website has not been configured yet. Keep this tab open in your web browser so that you can return to it later.</p>
+<ol start="17">
+<li><p>Return to the web browser tab with the Amazon S3 management console (but do not close the website tab).</p></li>
+<li><p>Click <i class="far fa-dot-circle"></i> <strong>Use this bucket to host a website</strong>.</p></li>
+<li><p>For <strong>Index document</strong>, enter: <input readonly="" class="copyable-inline-input" size="10" type="text" value="index.html"> (<em>You will need to enter this even though it is already displayed</em>)</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Save</span></p></li>
+</ol>
+<p>Your bucket has now been configured to host a static website.</p>
+
+
+
+<h2 id="step3">Task 2: Upload Content to your Bucket</h2>
+
+<p>In this task, you will upload the static files to your bucket.</p>
+<ol start="21">
+<li>Right-click each of these links and download the files to your computer:</li>
+</ol>
+<p><i class="fas fa-exclamation-triangle"></i> Ensure that each file keeps the same filename, including the extension!</p>
+<ul>
+<li><a href="https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-ARCHIT/v6.5.3/lab-1-s3/scripts/index.html" target="_blank">index.html</a></li>
+<li><a href="https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-ARCHIT/v6.5.3/lab-1-s3/scripts/script.js" target="_blank">script.js</a></li>
+<li><a href="https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-ARCHIT/v6.5.3/lab-1-s3/scripts/style.css" target="_blank">style.css</a></li>
+</ul><ol start="22">
+<li><p>Return to the S3 management console and click the <strong>Overview</strong> tab.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;"><i class="fas fa-upload"></i> Upload</span></p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Add files</span></p></li>
+<li><p>Choose the 3 files that you downloaded.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Upload</span></p></li>
+</ol>
+<p>Your files will be uploaded to the bucket.</p>
+
+
+
+<h2 id="step4">Task 3: Enable Access to the Objects</h2>
+
+<p>Objects stored in Amazon S3 are private by default. This ensures that your organization's data remains secure.</p>
+
+<p>In this task, you will make the uploaded objects publicly accessible.</p>
+
+<p>First, you will confirm that they are currently private.</p>
+<ol start="27">
+<li><p>Return to the web browser tab that showed the <strong>404 Not Found</strong> error.</p></li>
+<li><p>Refresh <i class="fas fa-sync"></i> the web page.</p></li>
+</ol>
+<p><i class="fas fa-comment"></i> If you accidentally closed this tab, go to the <strong>Properties</strong> tab, click <strong>Static website hosting</strong> and click the <strong>Endpoint</strong> link again.</p>
+
+<p>You should now see a <strong>403 Forbidden</strong> message. This is good! This indicates that your static website is being hosted by Amazon S3, but that the content is private.</p>
+
+<p>There are several ways to make Amazon S3 objects public:</p>
+<ul>
+<li>A <strong>Bucket Policy</strong> can be used to make a whole bucket public, or just a directory within a bucket.</li>
+<li>An <strong>Access Control List (ACL)</strong> can be used to make individual objects public.</li>
+</ul>
+<p>It is normally safer to make <em>individual objects</em> public because this avoids other objects being accidentally made public. However, if you know that the entire bucket contains no sensitive information, a <em>Bucket Policy</em> can be used.</p>
+
+<p>You will now configure the individual objects to be publicly accessible.</p>
+<ol start="29">
+<li><p>Return to the web browser tab with the Amazon S3 management console (but do not close the website tab).</p></li>
+<li><p>Select <i class="far fa-check-square"></i> all 3 objects.</p></li>
+<li><p>In the <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Actions <i class="fas fa-angle-down"></i></span> menu, click <strong>Make public</strong>.</p></li>
+</ol>
+<p>A list of the 3 objects will be displayed.</p>
+<ol start="32">
+<li>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Make public</span>
+</li>
+</ol>
+<p>That's it! Your static website will now be publicly accessible.</p>
+<ol start="33">
+<li><p>Return to the web browser tab showing <strong>403 Forbidden</strong>.</p></li>
+<li><p>Refresh <i class="fas fa-sync"></i> the web page.</p></li>
+</ol>
+<p>You should now see the static website being hosted by Amazon S3.</p>
+
+
+
+<h2 id="step5">Task 4: Update the Website</h2>
+
+<p>You can make changes to the website by editing the HTML file and uploading it again to the Amazon S3 bucket.</p>
+
+<p>Amazon S3 is an <em>object storage service</em>, so you will need to upload the whole file. This will replace the existing object in your bucket. It is not possible to edit the contents of an object — the whole object must be replaced.</p>
+<ol start="35">
+<li><p>On your computer, load the <strong>index.html</strong> file into a text editor (eg Notepad or TextEdit).</p></li>
+<li><p>Find the text <strong>Served from Amazon S3</strong> and replace it with <strong>Created by YOUR-NAME</strong>, substituting your name (for example <em>Created by Elvis</em>).</p></li>
+<li><p>Save the file.</p></li>
+<li><p>Return to the Amazon S3 management console and upload the <strong>index.html</strong> file that you just edited.</p></li>
+<li><p>Select <i class="far fa-check-square"></i> <strong>index.html</strong> and use the <strong>Actions</strong> menu to <strong>Make public</strong> again.</p></li>
+<li><p>Return to the web browser tab with the Static Website and refresh <i class="fas fa-sync"></i> the page.</p></li>
+</ol>
+<p>You should see your name on the page!</p>
+
+
+
+<h2 id="step6">Conclusion</h2>
+
+<p>Your static website is now accessible on the internet. Since it is hosted on Amazon S3, it has extremely high availability and can serve very high volumes of traffic without requiring any servers.</p>
+
+<p>You can also use your own Domain Name to direct users to a static website. This involves the use of the Amazon Route 53 DNS service, which will be covered later in the course.</p>
+
+
+
+<h2 id="step7">Lab Complete</h2>
+
+<p><i class="icon-flag-checkered"></i> Congratulations! You have completed the lab.</p>
+
+<h2 id="step8">End Lab</h2>
+
+<p>Follow these steps to close the console, end your lab, and evaluate the experience.</p>
+<ol start="41">
+<li><p>Return to the AWS Management Console.</p></li>
+<li><p>On the navigation bar, click <strong>awsstudent@&lt;AccountNumber&gt;</strong>, and then click <strong>Sign Out</strong>.</p></li>
+<li><p>Click <span style="background-color:#D93025;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#D93025;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">End Lab</span></p></li>
+<li><p>Click <span style="background-color:#DEDEDE;font-family:Google Sans;font-weight:bold;font-size:90%;color:#444;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">OK</span></p></li>
+<li><p>(Optional):</p></li>
+</ol><ul>
+<li>Select the applicable number of stars <i class="far fa-star"></i>
+</li>
+<li>Type a comment</li>
+<li>
+<p>Click <strong>Submit</strong></p>
+<ul>
+<li>1 star = Very dissatisfied</li>
+<li>2 stars = Dissatisfied</li>
+<li>3 stars = Neutral</li>
+<li>4 stars = Satisfied</li>
+<li>5 stars = Very satisfied</li>
+</ul>
+</li>
+</ul>
+<p>You may close the dialog if you don't want to provide feedback.</p>
+
+</div>
+<div class="js-lab-content-outline lab-content__outline">
+<a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step1">Start Lab</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step2">Task 1: Create a Bucket in Amazon S3</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step3">Task 2: Upload Content to your Bucket</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step4">Task 3: Enable Access to the Objects</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step5">Task 4: Update the Website</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step6">Conclusion</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step7">Lab Complete</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166973#step8">End Lab</a>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="lab-introduction js-lab-introduction is-hidden">
+<div class="lab-introduction__inner">
+<h1 class="headline-1">Welcome to Your First Lab!</h1>
+<ql-icon-button class="js-skip-button">close</ql-icon-button>
+<div class="lab-introduction__video">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="./AWS - Lab 1 - Hosting a Static Website_files/yF7EDXKTmoQ.html"></iframe>
+</div>
+<a class="js-skip-button button button--outline">Skip this video</a>
+</div>
+</div>
+
+
+
+</div>
+</main>
+<div class="modal fade" id="lab-details-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<div class="modal-body">
+<p class="l-mbm">
+This lab shows how to host a static website on Amazon S3.
+</p>
+<p class="small-label l-mbs">
+<strong>
+持续时间：
+</strong>
+0建立
+·
+60时间允许
+·
+60为期
+</p>
+<p class="small-label l-mbs">
+<strong>亚马逊网络服务系统区域：</strong>
+[us-west-2] <strong>US West (Oregon)</strong>
+</p>
+<p class="small-label l-mbs">
+
+</p>
+<p class="small-label">
+<strong>
+Permalink:
+</strong>
+<a href="https://china-aws.qwiklabs.com/catalog_lab/5101">https://china-aws.qwiklabs.com/catalog_lab/5101</a>
+</p>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Got It
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource(1).html"></iframe>
+</div>
+<div class="modal fade" id="lab-review-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<form class="simple_form js-lab-review-form" id="new_lab_review" action="https://china-aws.qwiklabs.com/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><div class="modal-body">
+<p class="label">
+你对这实验练习感到满意吗？
+</p>
+<div class="rateit js-rateit" data-rateit-max="5" data-rateit-min="0" data-rateit-resetable="false" data-rateit-step="1" data-rateit-value="0"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 0px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+<div class="l-mtm">
+
+<div class="control-group hidden lab_review_user_id"><div class="controls"><input class="hidden" type="hidden" value="318010" name="lab_review[user_id]" id="lab_review_user_id"></div></div>
+<div class="control-group hidden lab_review_classroom_id"><div class="controls"><input class="hidden" type="hidden" value="30842" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div></div>
+<div class="control-group hidden lab_review_lab_id"><div class="controls"><input class="hidden" type="hidden" value="5101" name="lab_review[lab_id]" id="lab_review_lab_id"></div></div>
+<div class="control-group hidden lab_review_focus_id"><div class="controls"><input class="hidden" type="hidden" value="166973" name="lab_review[focus_id]" id="lab_review_focus_id"></div></div>
+<div class="control-group hidden lab_review_rating"><div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div></div>
+<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">评论</label><div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div></div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="提交" disabled="disabled" class="btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="submit" data-disabled="false" data-disable-with="提交" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></input>
+</div>
+</form>
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource(2).html"></iframe>
+</div>
+
+<script>
+  $( function() {
+    ql.initMaterialInputs();
+    initChosen();
+    initSearch();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    ql.analytics.init();
+    initLabContent( );
+  ql.labOutline.links.init();
+  ql.labOutline.layout.init();
+  initLabReviewModal();
+  ql.labAssessment.init();
+  ql.labData.init();
+  initLabTranslations( {"are_you_sure":"全部做完了？如果您结束此实验练习，您将失去所有的工作。如果配额限制存在，您可能无法重新启动此实验练习。您确定您要结束此实验练习？\n","in_progress":"*进行中*","ending":"*结束*","starting":"*正在启动，请稍候*","end_concurrent_labs":"对不起，你只能在同一时间运行一个实验练习。要开始这个实验练习，请确认您希望把全部现有的实验练习结束。\n","copied":"复制完成","no_resource":"获取资源时有错误。","no_support":"没有支援 :(","mac_press":"按⌘-C复制","thanks_review":"感谢审阅了此实验练习。","windows_press":"按Ctrl-C复制","days":"天"} );
+  ql.labRun.init();
+  ql.initHeader();
+  ql.navigation.init();
+  ql.navPanel.init();
+  ql.navigation.init();
+  
+  });
+</script>
+<style>
+  .mdl-layout__container {
+    position: static
+  }
+</style>
+
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource(3).html" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 114px;width: 114px;" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource(4).html"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" src="./AWS - Lab 1 - Hosting a Static Website_files/saved_resource(5).html"></iframe></div></body></html>

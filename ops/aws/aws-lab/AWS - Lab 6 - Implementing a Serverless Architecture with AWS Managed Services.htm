@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://china-aws.qwiklabs.com/classrooms/30842/labs/166978 -->
+<html lang="zh" class="mdl-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/caff0d62ed"></script><script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/nr-1153.min.js"></script><script type="text/javascript" id="www-widgetapi-script" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/www-widgetapi.js" async=""></script><script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"caff0d62ed","applicationID":"7198647","transactionName":"IQ1XRUEOVV1dFxlRXAEXSlRATkpZVxI=","queueTime":0,"applicationTime":761,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).loader_config={licenseKey:"caff0d62ed",applicationID:"7198647"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta content="[]" name="active-experiments">
+<meta content="{&quot;userId&quot;:318010}" name="help-api-product-data">
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="vQmmZHu5VLt1PwAfv9KQkAKXehaubtxuWv/HI1KtJvLe6fs0aQS/Jj7cHo/WMoLPeqLObCIKPmRW0otb++vZSw==">
+<title>Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services | Qwiklabs</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+<meta content="In this lab, you will use AWS managed services to implement a serverless architecture." name="description">
+<meta content="Qwiklabs" name="author">
+<meta content="1rRsY0INj8RvwB5EF5pwdxt2A2P9aDgAlsICaJ0d5w0" name="google-site-verification">
+<meta content="Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services | Qwiklabs" property="og:title">
+<meta content="website" property="og:type">
+<meta content="/favicon-144.png" property="og:image">
+<meta content="Qwiklabs" property="og:site_name">
+<meta content="In this lab, you will use AWS managed services to implement a serverless architecture." property="og:description">
+<meta content="/qwiklabs_logo_900x887.png" property="og:logo" size="900x887">
+<meta content="/qwiklabs_logo_994x187.png" property="og:logo" size="994x187">
+<meta content="#3681E4" property="msapplication-TileColor">
+<meta content="/favicon-144.png" property="msapplication-TileImage">
+<link href="https://china-aws.qwiklabs.com/favicon-32.png" rel="shortcut icon">
+<link color="#3681E4" href="https://china-aws.qwiklabs.com/favicon-svg.svg" rel="mask-icon">
+<link href="https://china-aws.qwiklabs.com/favicon-180.png" rel="apple-touch-icon-precomposed">
+<link rel="stylesheet" media="screen" href="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/css">
+
+<link rel="stylesheet" media="screen" href="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/zh-baa812484310685c34f060fc93a4033f915219f35ede62badd48dfc59334e103.css">
+<!--[if lt IE 9]>
+<script src='http://html5shim.googlecode.com/svn/trunk/html5.js' type='text/javascript'></script>
+<![endif]-->
+<!--[endif]>  <![endif]-->
+<script>
+//<![CDATA[
+window.gon={};gon.current_user={"firstname":"Alpha","lastname":"Wang","fullname":"Alpha Wang","company":"Coupang","email":"awang@coupang.com","origin":"china-aws, direct","subscriptions":0,"id":"5a6928df14236eb34d3e60852bd714db","qlCreatedAt":"2019-12-05 07:02:39 UTC","optIn":true};gon.segment=null;gon.deployment="china-aws";
+//]]>
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.qwiklabs.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.qwiklabs.com/catalog?keywords={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script id="ze-snippet" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/snippet.js"></script><script type="text/javascript" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/asset_composer.5d2cd6d9613b85125812.js" charset="utf-8" async=""></script>
+
+
+
+<link rel="stylesheet" media="all" href="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/application-a53cf05bc9e39a99a1d6fa14f486d7ecec091bb67f0aca5b1257120cbf85ec76.css">
+<script>
+  EVENT_SOURCE_BASE_URL = "https://china-aws.qwiklabs.com/nchan-sub?id=";
+</script>
+<script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/webcomponents-loader.js"></script>
+<script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/hallofmirrors-0ecc40b22ffa59a068e7d11793e27822439d8d266fcf33fd5a8cc0f562a65a1d.js"></script><script async="" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/lazy.min.js"></script>
+<script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/iframe_api"></script>
+<script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/vendor-45d462772c30000424907184f70c7157e95fb6227698d1671c5051818a6f60d8.js"></script>
+<script src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/application-b19a78a33162e21e69548c829637ee074da544a00456ffbc7388e16ea7e81624.js"></script>
+</head>
+<body class="focuses focuses-show lab-show l-full no-nav" style="">
+<div class="header-container">
+<div class="header">
+<a class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect header__button header__button--nav header__nav-panel-button js-nav-toggle" data-upgraded=",MaterialButton,MaterialRipple">
+<i class="material-icons">menu</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header__title">
+<a class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect header__button header__button--nav" href="https://china-aws.qwiklabs.com/classrooms/30842" data-upgraded=",MaterialButton,MaterialRipple"><ql-icon>arrow_back</ql-icon><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+
+<h1 class="headline-5">
+Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services
+</h1>
+</div>
+<div class="header__actions">
+
+<ql-help context="lab" productdata="{&quot;userId&quot;:318010}"></ql-help>
+<a class="header-my-account-button mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect js-my-account-button" data-upgraded=",MaterialButton,MaterialRipple">
+<img class="avatar " src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<div class="header-my-account-menu js-my-account-menu">
+<div class="card elevation-2 no-padding">
+<div class="my-account-menu__top">
+<img class="avatar " src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/b6f5d11bbaf7e1f9b7c837dbbd63fb3a.png">
+<div class="my-account-menu__info">
+<h4 class="subtitle-headline-1">
+Alpha Wang
+</h4>
+<p class="body-2 text--gray">
+<span>awang@coupang.com</span>
+</p>
+<a class="button" href="https://china-aws.qwiklabs.com/my_account/profile">我的账户</a>
+</div>
+</div>
+<div class="my-account-menu__bottom">
+<a class="button button--hairline" rel="nofollow" data-method="delete" href="https://china-aws.qwiklabs.com/users/sign_out">退出</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<nav class="nav-bar">
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-bar__item__icon">
+home
+</ql-icon>
+<span class="nav-bar__item__label">
+Home
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-bar__item__icon">
+school
+</ql-icon>
+<span class="nav-bar__item__label">
+Catalog
+</span>
+</a>
+<a class="nav-bar__item js-navigation-button  active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-bar__item__icon">
+event_note
+</ql-icon>
+<span class="nav-bar__item__label">
+My Learning
+</span>
+</a>
+</nav>
+
+<nav class="nav-panel js-nav-panel">
+<div class="nav-panel__logo">
+<div class="custom-logo"><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/AWS-Logo-Sized.png"></div>
+</div>
+<a title="Home" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/"><ql-icon class="nav-panel__item__icon">
+home
+</ql-icon>
+<div class="nav-panel__item__label">
+Home
+</div>
+</a>
+<a title="Catalog" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/catalog"><ql-icon class="nav-panel__item__icon">
+school
+</ql-icon>
+<div class="nav-panel__item__label">
+Catalog
+</div>
+</a>
+<a title="My Learning" tabindex="-1" class="nav-panel__item js-navigation-button active" aria-current="page" href="https://china-aws.qwiklabs.com/my_learning"><ql-icon class="nav-panel__item__icon">
+event_note
+</ql-icon>
+<div class="nav-panel__item__label">
+My Learning
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a title="Profile" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/profile"><ql-icon class="nav-panel__item__icon">
+account_circle
+</ql-icon>
+<div class="nav-panel__item__label">
+Profile
+</div>
+</a>
+<a title="Credits &amp; Subscriptions" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/credits"><ql-icon class="nav-panel__item__icon">
+money
+</ql-icon>
+<div class="nav-panel__item__label">
+Credits &amp; Subscriptions
+</div>
+</a>
+<a title="Security" tabindex="-1" class="nav-panel__item js-navigation-button" href="https://china-aws.qwiklabs.com/my_account/security"><ql-icon class="nav-panel__item__icon">
+security
+</ql-icon>
+<div class="nav-panel__item__label">
+Security
+</div>
+</a>
+<div class="nav-panel__spacer"></div>
+<a class="nav-panel__item" tabindex="-1" href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#"><ql-help>
+<div class="nav-panel__help-item">
+<ql-icon class="nav-panel__item__icon">help</ql-icon>
+<div class="nav-panel__item__label">Help</div>
+</div>
+</ql-help>
+</a><div class="nav-panel__small-links">
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/privacy_policy">隐私政策</a>
+<a tabindex="-1" href="https://china-aws.qwiklabs.com/terms_of_service">服务条款</a>
+</div>
+</nav>
+<div class="nav-panel__overlay js-nav-toggle"></div>
+
+<main class="js-main">
+<span class="hidden" id="flash-sibling-before"></span>
+
+<div class="l-main-wrapper" id="main-wrapper">
+
+
+
+
+
+
+
+<div class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services&quot;,&quot;lab_name&quot;:&quot;Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;china-aws&quot;}" data-focus-id="166978" data-lab-billing-limit="0.0" data-lab-duration="10800" data-parent="classroom"></div>
+<ql-lab-control-panel class="js-lab-control-panel l-lab-control-panel" connectiondetails="[]" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:10800}" studentresources="[]"></ql-lab-control-panel>
+<div class="">
+<div class="js-lab-content lab-content">
+<div class="alert alert--fake js-alert">
+<p class="alert__message js-alert-message"></p>
+<a class="alert__close js-alert-close">
+<i class="fa fa-times"></i>
+</a>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource.html"></iframe>
+</div>
+<div class="lab-content__markdown-wrapper">
+<div class="lab-preamble">
+<h1 class="lab-preamble__title">
+Architecting on AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services
+</h1>
+<div class="lab-preamble__details subtitle-headline-1">
+<span>小时 </span>
+<span>免费</span>
+<div class="lab__rating">
+<a href="https://china-aws.qwiklabs.com/focuses/166978/reviews?parent=catalog"><div class="rateit" data-rateit-readonly="true" data-rateit-value="4.6943"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 75.1088px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+
+</a><a data-target="#lab-review-modal" data-toggle="modal">
+我的评级
+</a>
+</div>
+</div>
+</div>
+
+<div class="lab-content__inner-wrapper">
+<div class="js-markdown-instructions lab-content__markdown markdown-lab-instructions" id="markdown-lab-instructions">
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/aws-logo.png" alt=""></p>
+
+
+
+<p>© 2019 Amazon Web Services, Inc. and its affiliates. All rights reserved. This work may not be reproduced or redistributed, in whole or in part, without prior written permission from Amazon Web Services, Inc. Commercial copying, lending, or selling is prohibited.</p>
+
+<p>Errors or corrections? Email us at <a href="mailto:aws-course-feedback@amazon.com" target="_blank">aws-course-feedback@amazon.com</a>.</p>
+
+<p>Other questions? Contact us at <a href="https://aws.amazon.com/contact-us/aws-training/" target="_blank">https://aws.amazon.com/contact-us/aws-training/</a></p>
+
+<p>Traditionally, applications run on servers. These can be physical ('bare metal') servers or virtual environments running on top of physical servers, but they still need servers to be purchased and provisioned, and for capacity to be managed. On the other hand, AWS Lambda can run serverless code without having to pre-allocate servers. Simply provide the code and define a trigger and the function can run whenever required — once per week or hundreds of times per second, and you only pay for what you use.</p>
+
+<p>This lab demonstrates how to trigger an AWS Lambda function when a file is uploaded to Amazon S3. The file will be loaded into an Amazon DynamoDB table, and the data will be available for viewing on a Dashboard page that pulls the data directly from DynamoDB. The solution is <strong>completely serverless, automatically scalable and incurs very little cost</strong>.</p>
+
+<p>The system <strong>does not use Amazon EC2</strong>. The system will automatically scale when it is used and incurs practically no cost when it is <em>not</em> being used (just a few cents for data storage).</p>
+
+<p>In this lab you will:</p>
+<ul>
+<li>Use AWS managed services to implement a serverless architecture</li>
+<li>Trigger AWS Lambda functions from Amazon S3 and Amazon DynamoDB</li>
+<li>Configure Amazon SNS to send notifications</li>
+</ul>
+<p><strong>Scenario</strong></p>
+
+<p>You are creating an inventory tracking system. Stores from around the world will upload an inventory file to Amazon S3 and your team wants to be able to view the inventory levels and send a notification when inventory levels are low.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/flow.png" alt="Workflow"></p>
+
+<p>The scenario workflow is:</p>
+<ul>
+<li>You will <strong>upload</strong> an <em>inventory file</em> to an Amazon S3 bucket</li>
+<li>This will <strong>trigger an AWS Lambda function</strong> that will read the file and insert items into an <strong>Amazon DynamoDB table</strong>
+</li>
+<li>A serverless, web-based Dashboard application will use Amazon Cognito to authenticate to AWS and then gain access to the DynamoDB table to display inventory levels</li>
+<li>Another AWS Lambda function will receive updates from the DynamoDB table and will send a message to an <strong>Amazon Simple Notification Service (SNS) topic</strong> when an inventory item is out-of-stock</li>
+<li>Amazon SNS will then <strong>send an SMS or email notification to you</strong> to request additional inventory</li>
+</ul>
+<p><strong>Duration</strong></p>
+
+<p>This lab takes approximately <strong>20 minutes</strong> to complete.</p>
+
+
+
+<h2 id="step1">Start Lab</h2>
+<ol start="1">
+<li>At the top of your screen, launch your lab by clicking <span style="background-color:#34A853;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#34A853;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Start Lab</span>
+</li>
+</ol>
+<p>This will start the process of provisioning your lab resources. An estimated amount of time to provision your lab resources will be displayed. You must wait for your resources to be provisioned before continuing.</p>
+
+<p><i class="fas fa-info-circle"></i> If you are prompted for a token, use the one distributed to you (or credits you have purchased). </p>
+<ol start="2">
+<li><p>Open your lab by clicking <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span><br>
+This will open an AWS Management Console sign-in page.</p></li>
+<li><p>On the Sign-in page, configure:</p></li>
+</ol><ul>
+<li>
+<strong>IAM user name:</strong> <input readonly="" class="copyable-inline-input" size="10" type="text" value="awsstudent">
+</li>
+<li>
+<strong>Password:</strong> Paste the value of <strong>Password</strong> located to the left of these instructions.</li>
+<li>Click <span style="background-color:#257ACF;font-weight:bold;font-size:90%;color:white;border-radius:5px;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Sign In</span>
+</li>
+</ul>
+<p><i class="fas fa-exclamation-triangle"></i> <strong>Please do not change the Region unless instructed</strong>.</p>
+
+
+
+<h3>Common login errors</h3>
+
+<p><strong>Error: You must first log out</strong></p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/logouterror.png" alt=""></p>
+
+<p>If you see the message, <strong>You must first log out before logging into a different AWS account:</strong> </p>
+<ul>
+<li>Click <strong>click here</strong>
+</li>
+<li>Close your browser tab to return to your initial Qwiklabs window</li>
+<li>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Open Console</span> again</li>
+</ul>
+
+
+
+
+<h2 id="step2">Task 1: Create a Lambda Function to Load Data</h2>
+
+<p>In this task, you will create <strong>an AWS Lambda function</strong> that will process an inventory file. The Lambda function will read the file and insert information into an Amazon DynamoDB table.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/lambda-1.png" alt="Lambda function"></p>
+<ol start="4">
+<li><p>In the <strong>AWS Management Console</strong>, on the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>Lambda</strong>.</p></li>
+<li><p>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create a function</span></p></li>
+</ol>
+<p><i class="fas fa-info-circle"></i> <strong>Blueprints</strong> are code templates for writing Lambda functions. Blueprints are provided for standard Lambda triggers such as creating Alexa skills and processing Amazon Kinesis Firehose streams. This lab provides you with a pre-written Lambda function, so you will <strong>Author from scratch</strong>.</p>
+<ol start="6">
+<li>Configure the following:</li>
+</ol><ul>
+<li>
+<strong>Name:</strong> <input readonly="" class="copyable-inline-input" size="14" type="text" value="Load-Inventory">
+</li>
+<li>
+<strong>Runtime:</strong> <em>Python 3.7</em>
+</li>
+<li>Expand <i class="fas fa-caret-right"></i> <strong>Choose or create an execution role</strong>.</li>
+<li>
+<strong>Execution Role:</strong> <em>Use an existing role</em>
+</li>
+<li>
+<strong>Existing role:</strong> <em>Lambda-Load-Inventory-Role</em>
+</li>
+</ul>
+<p>This role gives execution permissions to the Lambda function so it can access Amazon S3 and Amazon DynamoDB.</p>
+<ol start="7">
+<li><p>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create function</span></p></li>
+<li><p>Scroll down to the <strong>Function code</strong> section, then delete all of the code that appears in the code editor.</p></li>
+<li><p>Copy and paste the following code into the <strong>Function code</strong> editor:</p></li>
+</ol><pre class="highlight python"><code><span class="c"># Load-Inventory Lambda function</span>
+<span class="c">#</span>
+<span class="c"># This function is triggered by an object being created in an Amazon S3 bucket.</span>
+<span class="c"># The file is downloaded and each line is inserted into a DynamoDB table.</span>
+
+<span class="kn">import</span> <span class="nn">json</span><span class="p">,</span> <span class="n">urllib</span><span class="p">,</span> <span class="n">boto3</span><span class="p">,</span> <span class="n">csv</span>
+
+<span class="c"># Connect to S3 and DynamoDB</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s">'s3'</span><span class="p">)</span>
+<span class="n">dynamodb</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">resource</span><span class="p">(</span><span class="s">'dynamodb'</span><span class="p">)</span>
+
+<span class="c"># Connect to the DynamoDB tables</span>
+<span class="n">inventoryTable</span> <span class="o">=</span> <span class="n">dynamodb</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s">'Inventory'</span><span class="p">);</span>
+
+<span class="c"># This handler is executed every time the Lambda function is triggered</span>
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+
+  <span class="c"># Show the incoming event in the debug log</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"Event received by Lambda function: "</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+  <span class="c"># Get the bucket and object key from the Event</span>
+  <span class="n">bucket</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s">'Records'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'s3'</span><span class="p">][</span><span class="s">'bucket'</span><span class="p">][</span><span class="s">'name'</span><span class="p">]</span>
+  <span class="n">key</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote_plus</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s">'Records'</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s">'s3'</span><span class="p">][</span><span class="s">'object'</span><span class="p">][</span><span class="s">'key'</span><span class="p">])</span>
+  <span class="n">localFilename</span> <span class="o">=</span> <span class="s">'/tmp/inventory.txt'</span>
+
+  <span class="c"># Download the file from S3 to the local filesystem</span>
+  <span class="k">try</span><span class="p">:</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">meta</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">bucket</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">localFilename</span><span class="p">)</span>
+  <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'Error getting object {} from bucket {}. Make sure they exist and your bucket is in the same region as this function.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">bucket</span><span class="p">))</span>
+    <span class="k">raise</span> <span class="n">e</span>
+
+  <span class="c"># Read the Inventory CSV file</span>
+  <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">localFilename</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">)</span>
+
+    <span class="c"># Read each row in the file</span>
+    <span class="n">rowCount</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+      <span class="n">rowCount</span> <span class="o">+=</span> <span class="mi">1</span>
+
+      <span class="c"># Show the row in the debug log</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'store'</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">'item'</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">'count'</span><span class="p">])</span>
+
+      <span class="k">try</span><span class="p">:</span>
+        <span class="c"># Insert Store, Item and Count into the Inventory table</span>
+        <span class="n">inventoryTable</span><span class="o">.</span><span class="n">put_item</span><span class="p">(</span>
+          <span class="n">Item</span><span class="o">=</span><span class="p">{</span>
+            <span class="s">'Store'</span><span class="p">:</span>  <span class="n">row</span><span class="p">[</span><span class="s">'store'</span><span class="p">],</span>
+            <span class="s">'Item'</span><span class="p">:</span>   <span class="n">row</span><span class="p">[</span><span class="s">'item'</span><span class="p">],</span>
+            <span class="s">'Count'</span><span class="p">:</span>  <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'count'</span><span class="p">])})</span>
+
+      <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+         <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+         <span class="k">print</span><span class="p">(</span><span class="s">"Unable to insert data into DynamoDB table"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+
+    <span class="c"># Finished!</span>
+    <span class="k">return</span> <span class="s">"</span><span class="si">%</span><span class="s">d counts inserted"</span> <span class="o">%</span> <span class="n">rowCount</span>
+</code><button class="button button--copy js-copy-button-0"><i class="fa fa-clipboard"></i></button></pre>
+<p>Examine the code. It is performing the following steps:</p>
+<ul>
+<li>Download the file from Amazon S3 that triggered the event</li>
+<li>Loop through each line in the file</li>
+<li>Insert the data into the DynamoDB <em>Inventory</em> table</li>
+</ul><ol start="10">
+<li>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save</span> at the top of the page.</li>
+</ol>
+<p>Next, you will configure Amazon S3 to trigger the Lambda function when a file is uploaded.</p>
+
+
+
+<h2 id="step3">Task 2: Configure an Amazon S3 Event</h2>
+
+<p>Stores from around the world will provide inventory files to load into the inventory tracking system. Rather than uploading files via FTP, the stores can upload directly to Amazon S3. This can be done via a web page, a script or as part of a program. Once a file is received, the AWS Lambda function will be triggered and it will load the inventory into a DynamoDB table.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/s3-event.png" alt="Lambda function"></p>
+
+<p>In this task you will create an Amazon S3 bucket and configure it to trigger the Lambda function.</p>
+<ol start="11">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>S3</strong>.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;"><i class="fas fa-plus"></i> Create bucket</span></p></li>
+</ol>
+<p>Each bucket must have a unique name, so you will add a random number to the bucket name. For example: <em>inventory-123</em></p>
+<ol start="13">
+<li><p>For <strong>Bucket name</strong> enter: <input readonly="" class="copyable-inline-input" size="13" type="text" value="inventory-123"> (Replacing <em>123</em> with a random number)</p></li>
+<li><p>Click <span style="background-color:white;font-weight:bold;font-size:90%;color:#329AD6;border-color:#329AD6;border-width:1px;border-style:solid;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Create</span></p></li>
+</ol>
+<p><i class="fas fa-comment"></i> If you receive an error stating <strong>The requested bucket name is not available</strong>, then click the first <strong>Edit</strong> link, change the bucket name and try again until it is accepted.</p>
+
+<p>You will now configure the bucket to automatically trigger the Lambda function whenever a file is uploaded.</p>
+<ol start="15">
+<li><p>Click the name of your <em>inventory-</em> bucket.</p></li>
+<li><p>Click the <strong>Properties</strong> tab.</p></li>
+<li><p>Scroll down to <strong>Advanced settings</strong>, then click <strong>Events</strong>.</p></li>
+</ol>
+<p>You will configure an event to trigger when an object is created in the S3 bucket.</p>
+<ol start="18">
+<li>Click <span style="color:#00a0d2;"><i class="fas fa-plus"></i> Add notification</span> then configure:</li>
+</ol><ul>
+<li>
+<strong>Name:</strong> <input readonly="" class="copyable-inline-input" size="14" type="text" value="Load-Inventory">
+</li>
+<li>
+<strong>Events:</strong> <i class="far fa-check-square"></i> All object create events</li>
+<li>
+<strong>Send to:</strong> <em>Lambda Function</em>
+</li>
+<li>
+<strong>Lambda:</strong> <em>Load-Inventory</em>
+</li>
+<li>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Save</span>
+</li>
+</ul>
+<p>This will tell Amazon S3 to trigger the <em>Load-Inventory</em> Lambda function you created earlier whenever an object is created in the bucket.</p>
+
+<p>Your bucket is now ready to receive inventory files!</p>
+
+
+
+<h2 id="step4">Task 3: Test the Loading Process</h2>
+
+<p>You are now ready to test the loading process. You will upload an inventory file, then check that it loaded successfully.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/load-test.png" alt="Load Test"></p>
+<ol start="19">
+<li><p>Right-click this link to download a Zip file: <a href="https://us-west-2-tcprod.s3.amazonaws.com/courses/ILT-TF-100-ARCHIT/v6.5.3/lab-6-serverless/web/inventory-files.zip" target="_blank">inventory-files.zip</a></p></li>
+<li><p>Unzip the file.</p></li>
+</ol>
+<p>The Zip file contains multiple inventory CSV files that you can use to test the system. Here is the contents of the Berlin file:</p>
+<pre class="highlight plaintext"><code>store,item,count
+Berlin,Echo Dot,12
+Berlin,Echo (2nd Gen),19
+Berlin,Echo Show,18
+Berlin,Echo Plus,0
+Berlin,Echo Look,10
+Berlin,Amazon Tap,15
+</code><button class="button button--copy js-copy-button-1"><i class="fa fa-clipboard"></i></button></pre><ol start="21">
+<li><p>Return to your S3 bucket in the console by clicking the <strong>Overview</strong> tab.</p></li>
+<li><p>Click <span style="background-color:#329AD6;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;"><i class="fas fa-upload"></i> Upload</span> and upload one of the CSV files to the bucket. (You can choose any of the inventory files.)</p></li>
+</ol>
+<p>Amazon S3 will automatically trigger the Lambda function, which will load the data into a DynamoDB table.</p>
+
+<p>A serverless dashboard application has been provided for you to view the results.</p>
+<ol start="23">
+<li><p>Copy the <strong>Dashboard</strong> URL shown to the left of the instructions you are currently reading.</p></li>
+<li><p>Open a new web browser tab, paste the URL you copied and hit Enter.</p></li>
+</ol>
+<p>The dashboard application will be displayed, showing the inventory data you loaded into the bucket. The data is  being retrieved from DynamoDB, which proves that the Lambda function was successfully triggered.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/dashboard.png" alt="Dashboard"></p>
+
+<p><i class="fas fa-exclamation-triangle"></i> If no information is displayed, ask your instructor to help diagnose the problem.</p>
+
+<p>This dashboard application is served as a static web page from Amazon S3. The dashboard authenticates via Amazon Cognito as an <em>anonymous user</em>, which provides sufficient permission for the dashboard to retrieve data from DynamoDB.</p>
+
+<p>You can also view the data within the DynamoDB table.</p>
+<ol start="25">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>DynamoDB</strong>.</p></li>
+<li><p>In the left navigation pane, click <strong>Tables</strong>.</p></li>
+<li><p>Click the <strong>Inventory</strong> table (click on the name itself).</p></li>
+<li><p>Click the <strong>Items</strong> tab.</p></li>
+</ol>
+<p>The data from the inventory file will be displayed, showing the Store, Item and inventory Count.</p>
+
+
+
+<h2 id="step5">Task 4: Configure Notifications</h2>
+
+<p>You wish to notify inventory management staff when a store runs out of stock of an item. For this serverless notification functionality, you will use <strong>Amazon Simple Notification Service (SNS)</strong>.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/sns.png" alt="Load Test"></p>
+
+<p>Amazon SNS is a flexible, fully managed publish/subscribe messaging and mobile notifications service for the delivery of messages to subscribing endpoints and clients. With SNS you can fan-out messages to a large number of subscribers, including distributed systems and services, and mobile devices.</p>
+<ol start="29">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>Simple Notification Service</strong>.</p></li>
+<li><p>In the <strong>Create topic</strong> box, for <strong>Topic name</strong> enter: <input readonly="" class="copyable-inline-input" size="7" type="text" value="NoStock"></p></li>
+<li><p>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Next step</span></p></li>
+<li><p>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Create topic</span></p></li>
+</ol>
+<p>To receive notifications you must <strong>subscribe</strong> to the Topic. You can choose to receive notifications via several methods, such as SMS and email. Select the Topic created, click <strong>Actions</strong>, and then <strong>subscribe</strong> to the Topic.  </p>
+<ol start="33">
+<li>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Create subscription</span> (in the lower half of the page) and configure:</li>
+</ol><ul>
+<li>
+<strong>Protocol:</strong> <em>SMS</em>
+</li>
+<li>
+<strong>Endpoint:</strong> Enter your cell phone number in International format (eg +14155557000 or +917513200000)</li>
+<li>Click <span style="background-color:white;font-family:Google Sans;font-weight:bold;font-size:90%;color:#1a73e8;border-color:#dadce0;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">Create subscription</span>
+</li>
+</ul>
+<p><i class="fas fa-comment"></i> If you do not wish to receive an SMS, you can instead subscribe via <strong>Email</strong>, providing an email address that you can access from the classroom. After creating an Email subscription, a confirmation email will be sent to you. Open the email and click the <em>Confirm subscription</em> link.</p>
+
+<p>Any message sent to the SNS Topic will be forwarded to you via SMS or Email.</p>
+
+
+
+<h2 id="step6">Task 5: Create a Lambda Function to Send Notifications</h2>
+
+<p>While you could modify the existing <em>Load-Inventory</em> Lambda function to check inventory levels while the file is being loaded, this is not a good architectural practice. Rather than overloading the <em>Load-Inventory</em> function with business logic, you will create another Lambda function that is triggered whenever data is loaded into the DynamoDB table. This will be triggered by a <em>DynamoDB Stream</em>.</p>
+
+<p>There are several benefits to this architectural approach:</p>
+<ul>
+<li>Each Lambda function performs a single, specific function. This makes the code simpler and more maintainable.</li>
+<li>Additional business logic can be added by creating additional Lambda functions. Each function operates independently, so existing functionality is not impacted.</li>
+</ul>
+<p>In this task, you will create another Lambda function that looks at inventory as it is loaded into the DynamoDB table. If it notices that an item is Out of Stock, it will send a notification via the Amazon SNS topic you created earlier.</p>
+
+<p><img src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/lambda-2.png" alt="Load Test"></p>
+<ol start="34">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>Lambda</strong>.</p></li>
+<li><p>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create function</span> and configure:</p></li>
+</ol><ul>
+<li>
+<strong>Name:</strong> <input readonly="" class="copyable-inline-input" size="11" type="text" value="Check-Stock">
+</li>
+<li>
+<strong>Runtime:</strong> <em>Python 3.7</em>
+</li>
+<li>
+<strong>Role:</strong> <em>Choose an existing role</em>
+</li>
+<li>Expand <i class="fas fa-caret-right"></i> <strong>Choose or create an execution role</strong>.</li>
+<li>
+<strong>Execution Role:</strong> <em>Use an existing role</em>
+</li>
+<li>
+<strong>Existing role:</strong> <em>Lambda-Check-Stock-Role</em>
+</li>
+<li>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Create function</span>
+</li>
+</ul>
+<p>This role has been configured with permissions to send a notification to Amazon SNS.</p>
+<ol start="36">
+<li><p>Scroll down to the <strong>Function code</strong> section, then delete all of the code that appears in the code editor.</p></li>
+<li><p>Copy the following code, and paste it into the <strong>Function code</strong> editor:</p></li>
+</ol><pre class="highlight python"><code><span class="c"># Stock Check Lambda function</span>
+<span class="c">#</span>
+<span class="c"># This function is triggered when values are inserted into the Inventory DynamoDB table.</span>
+<span class="c"># Inventory counts are checked and if an item is out of stock, a notification is sent to an SNS Topic.</span>
+
+<span class="kn">import</span> <span class="nn">json</span><span class="p">,</span> <span class="n">boto3</span>
+
+<span class="c"># This handler is executed every time the Lambda function is triggered</span>
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+
+  <span class="c"># Show the incoming event in the debug log</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"Event received by Lambda function: "</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+  <span class="c"># For each inventory item added, check if the count is zero</span>
+  <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">event</span><span class="p">[</span><span class="s">'Records'</span><span class="p">]:</span>
+    <span class="n">newImage</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s">'dynamodb'</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'NewImage'</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">newImage</span><span class="p">:</span>
+
+      <span class="n">count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">record</span><span class="p">[</span><span class="s">'dynamodb'</span><span class="p">][</span><span class="s">'NewImage'</span><span class="p">][</span><span class="s">'Count'</span><span class="p">][</span><span class="s">'N'</span><span class="p">])</span>
+
+      <span class="k">if</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">store</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s">'dynamodb'</span><span class="p">][</span><span class="s">'NewImage'</span><span class="p">][</span><span class="s">'Store'</span><span class="p">][</span><span class="s">'S'</span><span class="p">]</span>
+        <span class="n">item</span>  <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s">'dynamodb'</span><span class="p">][</span><span class="s">'NewImage'</span><span class="p">][</span><span class="s">'Item'</span><span class="p">][</span><span class="s">'S'</span><span class="p">]</span>
+
+        <span class="c"># Construct message to be sent</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="n">store</span> <span class="o">+</span> <span class="s">' is out of stock of '</span> <span class="o">+</span> <span class="n">item</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+        <span class="c"># Connect to SNS</span>
+        <span class="n">sns</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s">'sns'</span><span class="p">)</span>
+        <span class="n">alertTopic</span> <span class="o">=</span> <span class="s">'NoStock'</span>
+        <span class="n">snsTopicArn</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span><span class="p">[</span><span class="s">'TopicArn'</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">sns</span><span class="o">.</span><span class="n">list_topics</span><span class="p">()[</span><span class="s">'Topics'</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="s">'TopicArn'</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">':'</span> <span class="o">+</span> <span class="n">alertTopic</span><span class="o">.</span><span class="n">lower</span><span class="p">())][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c"># Send message to SNS</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span>
+          <span class="n">TopicArn</span><span class="o">=</span><span class="n">snsTopicArn</span><span class="p">,</span>
+          <span class="n">Message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+          <span class="n">Subject</span><span class="o">=</span><span class="s">'Inventory Alert!'</span><span class="p">,</span>
+          <span class="n">MessageStructure</span><span class="o">=</span><span class="s">'raw'</span>
+        <span class="p">)</span>
+
+  <span class="c"># Finished!</span>
+  <span class="k">return</span> <span class="s">'Successfully processed {} records.'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s">'Records'</span><span class="p">]))</span>
+</code><button class="button button--copy js-copy-button-2"><i class="fa fa-clipboard"></i></button></pre>
+<p>Examine the code. It is performing the following steps:</p>
+<ul>
+<li>Loop through the incoming records</li>
+<li>If the inventory count is zero, send a message to the <em>NoStock</em> SNS topic</li>
+</ul>
+<p>You will now configure the function to be triggered whenever data is added to the <em>Inventory</em> table in DynamoDB.</p>
+<ol start="38">
+<li><p>Scroll to the <strong>Designer</strong> section at the top of the page.</p></li>
+<li><p>Click <span style="background-color:white;font-weight:bold;font-size:90%;color:#545b64;border-color:#545b64;border-radius:2px;border-width:1px;border-style:solid;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;"><i class="fas fa-plus"></i> Add trigger</span> then configure:</p></li>
+</ol><ul>
+<li>
+<strong>Select a trigger:</strong> <em>DynamoDB</em>
+</li>
+<li>
+<strong>DynamoDB Table:</strong> <em>Inventory</em>
+</li>
+<li>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Add</span>
+</li>
+</ul><ol start="40">
+<li>Click <span style="background-color:#ec7211;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;white-space: nowrap;">Save</span> at the top of the page.</li>
+</ol>
+<p>You are now ready to test the system!</p>
+
+
+
+<h2 id="step7">Task 6: Test the System</h2>
+
+<p>You will now upload an inventory to Amazon S3, which will trigger the original <em>Load-Inventory</em> function. This function will load data into DynamoDB, which will then trigger the new <em>Check-Stock</em> Lambda function. If the Lambda function detects an item with zero inventory, it will send a message to Amazon SNS, which will notify you via SMS or Email.</p>
+<ol start="41">
+<li><p>On the <span style="background-color:#232f3e;font-weight:bold;font-size:90%;color:white;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">Services <i class="fas fa-angle-down"></i></span> menu, click <strong>S3</strong>.</p></li>
+<li><p>Click on the name of your <em>inventory-</em> bucket.</p></li>
+<li><p><strong>Upload</strong> a different inventory file.</p></li>
+<li><p>Return to the <strong>Inventory System Dashboard</strong> and refresh <i class="fas fa-sync"></i> the page.</p></li>
+</ol>
+<p>You should now be able to use the <strong>Store</strong> pull-down menu to view inventory from both stores.</p>
+
+<p>Also, you should receive a <strong>notification via SMS/Email</strong> telling you that the store is out of stock of an item (every inventory file has one item out-of-stock).</p>
+
+<p><i class="fas fa-comment"></i> If you did not receive a notification please wait a few minutes and try uploading a different inventory file. The DynamoDB trigger may sometimes take a few minutes to enable.</p>
+<ol start="45">
+<li>Try uploading multiple inventory files at the same time. What do you think will happen?</li>
+</ol>
+
+
+<h2 id="step8">Lab Complete</h2>
+
+<p><i class="icon-flag-checkered"></i> Congratulations! You have completed the lab.</p>
+
+<h2 id="step9">End Lab</h2>
+
+<p>Follow these steps to close the console, end your lab, and evaluate the experience.</p>
+<ol start="46">
+<li><p>Return to the AWS Management Console.</p></li>
+<li><p>On the navigation bar, click <strong>awsstudent@&lt;AccountNumber&gt;</strong>, and then click <strong>Sign Out</strong>.</p></li>
+<li><p>Click <span style="background-color:#D93025;font-family:Google Sans;font-weight:bold;font-size:90%;color:white;border-color:#D93025;border-radius:4px;border-width:2px;border-style:solid;padding-top:5px;padding-bottom:5px;padding-left:10px;padding-right:10px;">End Lab</span></p></li>
+<li><p>Click <span style="background-color:#DEDEDE;font-family:Google Sans;font-weight:bold;font-size:90%;color:#444;border-width:1px;border-style:solid;border-color:#444;padding-top:3px;padding-bottom:3px;padding-left:10px;padding-right:10px;">OK</span></p></li>
+<li><p>(Optional):</p></li>
+</ol><ul>
+<li>Select the applicable number of stars <i class="far fa-star"></i>
+</li>
+<li>Type a comment</li>
+<li>
+<p>Click <strong>Submit</strong></p>
+<ul>
+<li>1 star = Very dissatisfied</li>
+<li>2 stars = Dissatisfied</li>
+<li>3 stars = Neutral</li>
+<li>4 stars = Satisfied</li>
+<li>5 stars = Very satisfied</li>
+</ul>
+</li>
+</ul>
+<p>You may close the dialog if you don't want to provide feedback.</p>
+
+</div>
+<div class="js-lab-content-outline lab-content__outline is-stuck">
+<a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step1">Start Lab</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step2">Task 1: Create a Lambda Function to Load Data</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step3">Task 2: Configure an Amazon S3 Event</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step4">Task 3: Test the Loading Process</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step5">Task 4: Configure Notifications</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step6">Task 5: Create a Lambda Function to Send Notifications</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step7">Task 6: Test the System</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step8">Lab Complete</a><a href="https://china-aws.qwiklabs.com/classrooms/30842/labs/166978#step9">End Lab</a>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+<div class="lab-introduction js-lab-introduction is-hidden">
+<div class="lab-introduction__inner">
+<h1 class="headline-1">Welcome to Your First Lab!</h1>
+<ql-icon-button class="js-skip-button">close</ql-icon-button>
+<div class="lab-introduction__video">
+<iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/yF7EDXKTmoQ.html"></iframe>
+</div>
+<a class="js-skip-button button button--outline">Skip this video</a>
+</div>
+</div>
+
+
+
+</div>
+</main>
+<div class="modal fade" id="lab-details-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<div class="modal-body">
+<p class="l-mbm">
+In this lab, you will use AWS managed services to implement a serverless architecture.
+</p>
+<p class="small-label l-mbs">
+<strong>
+持续时间：
+</strong>
+2建立
+·
+180时间允许
+·
+180为期
+</p>
+<p class="small-label l-mbs">
+<strong>亚马逊网络服务系统区域：</strong>
+[us-west-2] <strong>US West (Oregon)</strong>
+</p>
+<p class="small-label l-mbs">
+
+</p>
+<p class="small-label">
+<strong>
+Permalink:
+</strong>
+<a href="https://china-aws.qwiklabs.com/catalog_lab/5106">https://china-aws.qwiklabs.com/catalog_lab/5106</a>
+</p>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Got It
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+</div>
+
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource(1).html"></iframe>
+</div>
+<div class="modal fade" id="lab-review-modal">
+<div class="modal-container">
+<div class="mdl-shadow--24dp modal-content">
+<form class="simple_form js-lab-review-form" id="new_lab_review" action="https://china-aws.qwiklabs.com/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓"><div class="modal-body">
+<p class="label">
+你对这实验练习感到满意吗？
+</p>
+<div class="rateit js-rateit" data-rateit-max="5" data-rateit-min="0" data-rateit-resetable="false" data-rateit-step="1" data-rateit-value="0"><div class="rateit-reset" style="display: none;"></div><div class="rateit-range" style="width: 80px; height: 16px;"><div class="rateit-selected" style="height: 16px; width: 0px;"></div><div class="rateit-hover" style="height:16px"></div></div></div>
+<div class="l-mtm">
+
+<div class="control-group hidden lab_review_user_id"><div class="controls"><input class="hidden" type="hidden" value="318010" name="lab_review[user_id]" id="lab_review_user_id"></div></div>
+<div class="control-group hidden lab_review_classroom_id"><div class="controls"><input class="hidden" type="hidden" value="30842" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div></div>
+<div class="control-group hidden lab_review_lab_id"><div class="controls"><input class="hidden" type="hidden" value="5106" name="lab_review[lab_id]" id="lab_review_lab_id"></div></div>
+<div class="control-group hidden lab_review_focus_id"><div class="controls"><input class="hidden" type="hidden" value="166978" name="lab_review[focus_id]" id="lab_review_focus_id"></div></div>
+<div class="control-group hidden lab_review_rating"><div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div></div>
+<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">评论</label><div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div></div>
+</div>
+</div>
+<div class="modal-actions">
+<a class="mdl-button mdl-button--primary mdl-js-button mdl-js-ripple-effect" data-dismiss="modal" data-upgraded=",MaterialButton,MaterialRipple">
+Cancel
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></a>
+<input type="submit" name="commit" value="提交" disabled="disabled" class="btn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" id="submit" data-disabled="false" data-disable-with="提交" data-upgraded=",MaterialButton,MaterialRipple"><span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></input>
+</div>
+</form>
+
+</div>
+</div>
+<iframe class="l-ie-iframe-fix" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource(2).html"></iframe>
+</div>
+
+<script>
+  $( function() {
+    ql.initMaterialInputs();
+    initChosen();
+    initSearch();
+    initTabs();
+    ql.list.init();
+    ql.favoriting.init();
+    ql.header.myAccount.init();
+    initTooltips();
+    ql.autocomplete.init();
+    ql.modals.init();
+    ql.toggleButtons.init();
+    ql.analytics.init();
+    initLabContent( );
+  ql.labOutline.links.init();
+  ql.labOutline.layout.init();
+  initLabReviewModal();
+  ql.labAssessment.init();
+  ql.labData.init();
+  initLabTranslations( {"are_you_sure":"全部做完了？如果您结束此实验练习，您将失去所有的工作。如果配额限制存在，您可能无法重新启动此实验练习。您确定您要结束此实验练习？\n","in_progress":"*进行中*","ending":"*结束*","starting":"*正在启动，请稍候*","end_concurrent_labs":"对不起，你只能在同一时间运行一个实验练习。要开始这个实验练习，请确认您希望把全部现有的实验练习结束。\n","copied":"复制完成","no_resource":"获取资源时有错误。","no_support":"没有支援 :(","mac_press":"按⌘-C复制","thanks_review":"感谢审阅了此实验练习。","windows_press":"按Ctrl-C复制","days":"天"} );
+  ql.labRun.init();
+  ql.initHeader();
+  ql.navigation.init();
+  ql.navPanel.init();
+  ql.navigation.init();
+  
+  });
+</script>
+<style>
+  .mdl-layout__container {
+    position: static
+  }
+</style>
+
+
+<iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource(3).html" style="width: 0px; height: 0px; border: 0px; position: absolute; top: -9999px;"></iframe><div><iframe title="Opens a widget where you can chat to one of our agents" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active" style="border: none; background: transparent; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 114px;width: 114px;" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource(4).html"></iframe></div><div><iframe title="Find more information here" id="webWidget" tabindex="-1" class="zEWidget-webWidget " style="border: none; background: transparent; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" src="./AWS - Lab 6 - Implementing a Serverless Architecture with AWS Managed Services_files/saved_resource(5).html"></iframe></div></body></html>
